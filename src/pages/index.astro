@@ -1,7 +1,27 @@
 ---
+import Footer from '@components/chrome/Footer.astro';
+import Header from '@components/chrome/Header.astro';
 import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout title="Home" description="Descripción de la página de inicio">
-  <h1>Hola</h1>
+  <div class="relative grid min-h-screen grid-cols-[1fr_2.5fr] grid-rows-[auto_1fr_auto] overflow-x-clip">
+    <Header class="col-start-1 row-start-1" />
+    <main class="col-span-2 col-start-2 row-span-2 row-start-1 flex border-b-2 border-l-2">
+      <section class="flex flex-1 flex-col">
+        <article class="flex-1 border-b-2 p-4">b1</article>
+        <article class="flex-1 p-4">b2</article>
+      </section>
+      <div class="bg-neutral-950 p-4 text-neutral-50">texto</div>
+      <section class="flex flex-1 flex-col">
+        <article class="flex-2 border-b-2 p-4">c1</article>
+        <article class="flex-1 p-4">c2</article>
+      </section>
+    </main>
+    <aside class="col-start-1 row-span-2 row-start-2 flex flex-col">
+      <section class="flex-1 border-b-2 p-4">a1</section>
+      <section class="flex-2 p-4">a2</section>
+    </aside>
+    <Footer class="col-span-2 col-start-2 row-start-3">footer</Footer>
+  </div>
 </Layout>

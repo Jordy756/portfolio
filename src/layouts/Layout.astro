@@ -17,7 +17,7 @@ const ogImageAlt = 'Vista previa de Alura Encryptor para encriptar y desencripta
 ---
 
 <!doctype html>
-<html lang="es" class="scrollbar-thumb-neutral-500 scrollbar-track-transparent scrollbar-gutter-stable scroll-smooth">
+<html lang="es" class="scrollbar-thumb-neutral-500 scrollbar-track-transparent scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -48,8 +48,6 @@ const ogImageAlt = 'Vista previa de Alura Encryptor para encriptar y desencripta
     <meta name="twitter:image:alt" content={ogImageAlt} />
   </head>
   <body class="bg-neutral-50 text-pretty text-neutral-950">
-    <div class="relative flex min-h-screen flex-col gap-4 overflow-x-clip">
-      <slot />
-    </div>
+    <slot />
   </body>
 </html>
