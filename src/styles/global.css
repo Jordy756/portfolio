@@ -13,4 +13,29 @@
   --color-primary-900: #4a202e;
 
   --max-width: 1200px;
+
+  --writing-mode-horizontal-tb: horizontal-tb;
+  --writing-mode-vertical-lr: vertical-lr;
+  --writing-mode-vertical-rl: vertical-rl;
+  --writing-mode-sideways-lr: sideways-lr;
+  --writing-mode-sideways-rl: sideways-rl;
+
+  --animate-horizontal-marquee: horizontalMarqueeAnimation 10s linear infinite;
+  --animate-vertical-marquee: verticalMarqueeAnimation 10s linear infinite;
+
+  @keyframes horizontalMarqueeAnimation {
+    to {
+      transform: translateX(calc(-100% - 32px));
+    }
+  }
+
+  @keyframes verticalMarqueeAnimation {
+    to {
+      transform: translateY(calc(-100% - 32px));
+    }
+  }
+}
+
+@utility writing-mode-* {
+  writing-mode: --value(--writing-mode-*, [*]);
 }

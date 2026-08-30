@@ -1,0 +1,37 @@
+---
+interface Props {
+  phrases: string[];
+  direction?: 'vertical' | 'horizontal';
+  class?: string;
+}
+
+const { phrases, direction = 'horizontal', class: className } = Astro.props;
+---
+
+<aside
+  class:list={[
+    className,
+    direction === 'horizontal' ? 'h-fit w-full' : 'h-full w-fit writing-mode-vertical-rl',
+    'flex gap-8 overflow-hidden bg-neutral-950 p-2 text-2xl font-semibold text-neutral-50 hover:[&>ul]:[animation-play-state:paused]',
+  ]}
+>
+  {
+    [0, 1].map((_) => (
+      <ul class:list={['flex gap-8', `animate-${direction}-marquee`]}>
+        {phrases.map((phrase) => (
+          <li
+            class:list={[
+              'relative whitespace-nowrap uppercase',
+              direction === 'horizontal'
+                ? 'after:absolute after:top-1/2 after:-right-5 after:size-2 after:-translate-y-1/2 after:rounded-full after:bg-neutral-50'
+                : 'after:absolute after:-bottom-5 after:left-1/2 after:size-2 after:-translate-x-1/2 after:rounded-full after:bg-neutral-50',
+            ]}
+          >
+            {phrase}
+          </li>
+        ))}
+      </ul>
+    ))
+  }
+</aside>
+<!-- animate-marquee -->
