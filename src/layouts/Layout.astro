@@ -1,0 +1,55 @@
+---
+import '@styles/global.css';
+import { Font } from 'astro:assets';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const hostname = Astro.site?.hostname;
+const ogImageUrl =
+  'https://res.cloudinary.com/dygwpgeq9/image/upload/q_auto/f_auto/v1775784152/alura_encryptor_dark_og_img_ocfkkk.webp';
+const ogImageAlt = 'Vista previa de Alura Encryptor para encriptar y desencriptar textos';
+---
+
+<!doctype html>
+<html lang="es" class="scrollbar-thumb-neutral-500 scrollbar-track-transparent scrollbar-gutter-stable scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- <Font cssVariable="--font-montserrat" preload /> -->
+
+    <meta name="description" content={description} />
+
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Alura Encryptor" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content={ogImageAlt} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content={hostname} />
+    <meta property="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
+  </head>
+  <body class="bg-neutral-50 text-pretty text-neutral-950">
+    <div class="relative flex min-h-screen flex-col gap-4 overflow-x-clip">
+      <slot />
+    </div>
+  </body>
+</html>
