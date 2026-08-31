@@ -8,9 +8,6 @@ interface Props extends HTMLAttributes<'a'> {
 const { variant = 'btn-primary', class: className, ...props } = Astro.props;
 ---
 
-<a
-  class:list={[className, variant, 'flex items-center justify-center gap-2 border-2 px-4 py-2 font-semibold']}
-  {...props}
->
+<a class:list={[className, variant, 'flex items-center justify-center gap-2 border-2 px-5 py-1.5 font-semibold']} {...props}>
   <slot />
 </a>

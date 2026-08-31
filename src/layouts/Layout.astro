@@ -26,7 +26,8 @@ const ogImageAlt = 'Vista previa de Alura Encryptor para encriptar y desencripta
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="canonical" href={canonicalUrl} />
 
-    <!-- <Font cssVariable="--font-montserrat" preload /> -->
+    <Font cssVariable="--font-barlow-condensed" preload />
+    <Font cssVariable="--font-host-grotesk" preload />
 
     <meta name="description" content={description} />
 
@@ -47,7 +48,7 @@ const ogImageAlt = 'Vista previa de Alura Encryptor para encriptar y desencripta
     <meta name="twitter:image" content={ogImageUrl} />
     <meta name="twitter:image:alt" content={ogImageAlt} />
   </head>
-  <body class="bg-neutral-50 text-pretty text-neutral-950">
+  <body class="bg-neutral-50 text-lg text-pretty text-neutral-950 font-barlow-condensed">
     <slot />
   </body>
 </html>
