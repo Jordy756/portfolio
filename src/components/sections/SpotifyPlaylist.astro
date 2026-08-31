@@ -1,0 +1,16 @@
+---
+interface Props {
+  playlistId: string;
+  height?: number;
+}
+
+const { playlistId } = Astro.props;
+const embedUrl = `https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator`;
+---
+
+<article class="relative flex flex-1 flex-col">
+  <header class="absolute top-0 left-0 border-r-2 border-b-2 bg-neutral-50 px-2">
+    <h2 class="text-xl font-semibold uppercase">Playlist</h2>
+  </header>
+  <div class="flex flex-1 flex-col items-center justify-center p-4 pt-8"></div>
+</article>
