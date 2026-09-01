@@ -12,12 +12,17 @@ const { phrases, direction = 'horizontal', class: className } = Astro.props;
   class:list={[
     className,
     direction === 'horizontal' ? 'h-fit w-full' : 'h-[calc(100dvh-58px)] w-fit writing-mode-vertical-rl',
-    'flex gap-8 overflow-hidden bg-neutral-950 p-2 text-4xl font-semibold text-neutral-50 hover:[&>ul]:[animation-play-state:paused]',
+    'flex gap-8 overflow-hidden bg-neutral-950 p-3 text-4xl font-semibold text-neutral-50 hover:[&>ul]:[animation-play-state:paused]',
   ]}
 >
   {
     [0, 1].map((_) => (
-      <ul class:list={['flex gap-8', `animate-vertical-marquee`]}>
+      <ul
+        class:list={[
+          'flex gap-8',
+          direction === 'vertical' ? 'animate-vertical-marquee' : 'animate-horizontal-marquee',
+        ]}
+      >
         {phrases.map((phrase) => (
           <li
             class:list={[

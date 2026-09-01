@@ -1,5 +1,6 @@
 ---
 import Link from '@components/ui/Link.astro';
+import { Image } from 'astro:assets';
 
 interface Props {
   class: string;
@@ -12,7 +13,9 @@ const currentLocale = 'en';
 ---
 
 <header class:list={[className, 'flex items-center justify-between border-b-2 uppercase']}>
-  <a href="" class="flex-[1.5] px-4 py-2 text-center text-4xl">Mono X7</a>
+  <a href="" class="flex-[1.5] flex items-center justify-center px-4 py-2 text-center text-4xl">
+    <Image src="/logo.png" width={237} height={60} alt="Prueba" class="h-15 w-auto object-contain" />
+  </a>
   <div class="flex flex-1 flex-col text-xl font-semibold">
     <Link href="/" class="border-t-0">Projects</Link>
     <Link href="" class="border-y-0">Contact</Link>

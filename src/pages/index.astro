@@ -7,7 +7,7 @@ import Experience from '@components/sections/Experience.astro';
 import IdkYet from '@components/sections/IdkYet.astro';
 import IdkYet2 from '@components/sections/IdkYet2.astro';
 import Layout from '@layouts/Layout.astro';
-import SpotifyPlaylist from '@components/sections/SpotifyPlaylist.astro';
+import IdkYet3 from '@components/sections/IdkYet3.astro';
 
 const phrases = ['Web Developer', 'Frontend Developer', 'Backend Developer', 'UI/UX Designer'];
 ---
@@ -17,7 +17,7 @@ const phrases = ['Web Developer', 'Frontend Developer', 'Backend Developer', 'UI
     <Header class="col-start-1 row-start-1" />
     <main class="col-span-2 col-start-2 row-span-2 row-start-1 flex border-b-2 border-l-2">
       <section class="flex flex-1 flex-col">
-        <SpotifyPlaylist playlistId="REEMPLAZAR_CON_TU_PLAYLIST_ID" />
+        <IdkYet3 />
         <IdkYet2 />
       </section>
       <Marquee phrases={phrases} direction="vertical" />
@@ -27,7 +27,7 @@ const phrases = ['Web Developer', 'Frontend Developer', 'Backend Developer', 'UI
     </main>
     <aside class="col-start-1 row-span-2 row-start-2 flex flex-col">
       <AboutMe />
-      <IdkYet />
+      <!-- <IdkYet /> -->
     </aside>
     <Footer class="col-span-2 col-start-2 row-start-3">footer</Footer>
   </div>
