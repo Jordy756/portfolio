@@ -1,7 +1,17 @@
 ---
 import { Image } from 'astro:assets';
+import { useTranslations, getCurrentLanguage } from '@i18n/utils';
+
+const language = getCurrentLanguage(Astro.currentLocale);
+const t = useTranslations(language);
 ---
 
 <article class="relative flex aspect-video border-t-2 p-4">
-  <Image src="/work_02.png" width={500} height={800} alt="Imagen de perfil" class="absolute top-0 left-0 size-full" />
+  <Image
+    src="/work_02.png"
+    width={500}
+    height={800}
+    alt={t('sections.idkYet.image.alt')}
+    class="absolute top-0 left-0 size-full"
+  />
 </article>

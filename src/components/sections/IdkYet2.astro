@@ -1,8 +1,17 @@
 ---
 import { Image } from 'astro:assets';
+import { useTranslations, getCurrentLanguage } from '@i18n/utils';
+
+const language = getCurrentLanguage(Astro.currentLocale);
+const t = useTranslations(language);
 ---
 
-<figure class="flex flex-2 items-center justify-center border-t-2">
-  <Image src="/test.png" width={400} height={400} alt="Prueba" class="size-full object-cover" />
-  <!-- <video src="/video.mp4" loop autoplay muted class="size-full object-cover"></video> -->
+<figure class="flex flex-3 items-center justify-center border-t-2">
+  <Image
+    src="/test.png"
+    width={400}
+    height={400}
+    alt={t('sections.idkYet2.image.alt')}
+    class="size-full object-cover"
+  />
 </figure>

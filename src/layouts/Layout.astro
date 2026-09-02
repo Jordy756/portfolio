@@ -1,6 +1,8 @@
 ---
+import { getCurrentLanguage, useTranslations } from '@i18n/utils';
 import '@styles/global.css';
 import { Font } from 'astro:assets';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   title: string;
@@ -8,16 +10,29 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+const language = getCurrentLanguage(Astro.currentLocale);
+const t = useTranslations(language);
+
+const ogLocaleTag = (() => {
+  switch (language) {
+    case 'es':
+      return 'es_ES';
+    case 'en':
+    default:
+      return 'en_US';
+  }
+})();
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 const hostname = Astro.site?.hostname;
 const ogImageUrl =
   'https://res.cloudinary.com/dygwpgeq9/image/upload/q_auto/f_auto/v1775784152/alura_encryptor_dark_og_img_ocfkkk.webp';
-const ogImageAlt = 'Vista previa de Alura Encryptor para encriptar y desencriptar textos';
+const ogImageAlt = t('layout.meta.og.image.alt');
+const ogSiteName = t('layout.meta.og.site_name');
 ---
 
 <!doctype html>
-<html lang="es" class="scrollbar-none scrollbar-thumb-neutral-500 scrollbar-track-transparent scroll-smooth">
+<html lang={language} class="scrollbar-none scrollbar-thumb-neutral-500 scrollbar-track-transparent scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -33,8 +48,8 @@ const ogImageAlt = 'Vista previa de Alura Encryptor para encriptar y desencripta
 
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Alura Encryptor" />
-    <meta property="og:locale" content="es_MX" />
+    <meta property="og:site_name" content={ogSiteName} />
+    <meta property="og:locale" content={ogLocaleTag} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageUrl} />
@@ -47,8 +62,10 @@ const ogImageAlt = 'Vista previa de Alura Encryptor para encriptar y desencripta
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageUrl} />
     <meta name="twitter:image:alt" content={ogImageAlt} />
+
+    <ClientRouter />
   </head>
-  <body class="bg-neutral-50 text-lg text-pretty text-neutral-950 font-barlow-condensed">
+  <body class="bg-neutral-50 font-barlow-condensed text-lg text-pretty text-neutral-950">
     <slot />
   </body>
 </html>

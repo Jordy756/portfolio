@@ -9,6 +9,14 @@ export default defineConfig({
 
   integrations: [sitemap()],
 
+  i18n: {
+    locales: ['en', 'es'],
+    defaultLocale: 'en',
+    routing: {
+      prefixDefaultLocale: true,
+    },
+  },
+
   fonts: [
     {
       name: 'Host Grotesk',
@@ -34,6 +42,7 @@ export default defineConfig({
       fallbacks: ['sans-serif', 'system-ui'],
     },
   ],
+
   vite: {
     plugins: [tailwindcss()],
   },

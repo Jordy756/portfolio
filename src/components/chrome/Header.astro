@@ -1,6 +1,8 @@
 ---
 import Link from '@components/ui/Link.astro';
 import { Image } from 'astro:assets';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { useTranslations, getCurrentLanguage, languages } from '@i18n/utils';
 
 interface Props {
   class: string;
@@ -8,33 +10,33 @@ interface Props {
 
 const { class: className } = Astro.props;
 
-const locales = ['en', 'es'];
-const currentLocale = 'en';
+const language = getCurrentLanguage(Astro.currentLocale);
+const t = useTranslations(language);
 ---
 
 <header class:list={[className, 'flex items-center justify-between border-b-2 uppercase']}>
-  <a href="" class="flex-[1.5] flex items-center justify-center px-4 py-2 text-center text-4xl">
-    <Image src="/logo.png" width={237} height={60} alt="Prueba" class="h-15 w-auto object-contain" />
+  <a href="" class="flex flex-[1.5] items-center justify-center px-4 py-2 text-center text-4xl">
+    <Image src="/logo.png" width={237} height={60} alt={t('header.logo.alt')} class="h-15 w-auto object-contain" />
   </a>
   <div class="flex flex-1 flex-col text-xl font-semibold">
-    <Link href="/" class="border-t-0">Projects</Link>
-    <Link href="" class="border-y-0">Contact</Link>
+    <Link href="/" class="border-t-0">{t('nav.projects')}</Link>
+    <Link href="" class="border-y-0">{t('nav.contact')}</Link>
   </div>
   <ul class="text-xl">
     {
-      locales.map((locale) => {
-        const isCurrent = locale === currentLocale;
+      languages.map((lang) => {
+        const isCurrent = lang === language;
         const baseClasses = 'px-5 py-1.5 flex-1';
 
         return (
           <li class="flex font-semibold not-last:border-b-2">
             {isCurrent ? (
               <span class:list={[baseClasses, 'bg-neutral-950 text-neutral-50']} aria-current="page">
-                {locale}
+                {lang}
               </span>
             ) : (
-              <a href={`/${locale}`} hreflang={locale} class:list={[baseClasses]}>
-                {locale}
+              <a href={getRelativeLocaleUrl(lang, '')} hreflang={lang} class:list={[baseClasses]}>
+                {lang}
               </a>
             )}
           </li>

@@ -1,0 +1,22 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { getCurrentLanguage, useTranslations } from '@i18n/utils';
+
+export async function getStaticPaths() {
+  return [{ params: { locale: 'en' } }, { params: { locale: 'es' } }];
+}
+
+const language = getCurrentLanguage(Astro.currentLocale);
+const t = useTranslations(language);
+---
+
+<Layout title={t('pages.404.title')} description={t('pages.404.description')}>
+  <main class="flex min-h-screen items-center justify-center px-6 py-16 text-center">
+    <div class="flex flex-col gap-4">
+      <h1 class="font-host-grotesk text-6xl font-semibold uppercase">
+        {t('pages.404.title')}
+      </h1>
+      <p class="font-host-grotesk text-2xl">{t('pages.404.description')}</p>
+    </div>
+  </main>
+</Layout>

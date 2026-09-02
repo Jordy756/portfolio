@@ -1,24 +1,18 @@
 ---
+import { useTranslations, getCurrentLanguage } from '@i18n/utils';
 
+const language = getCurrentLanguage(Astro.currentLocale);
+const t = useTranslations(language);
 ---
 
 <article class="relative flex-1">
   <header class="absolute top-0 left-0 border-r-2 border-b-2 bg-neutral-50 px-2">
-    <h2 class="text-xl font-semibold uppercase">About Me</h2>
+    <h2 class="text-xl font-semibold uppercase">{t('sections.aboutMe.heading')}</h2>
   </header>
   <div class="flex scrollbar-thin flex-col gap-6 overflow-y-auto px-16 py-10 font-host-grotesk text-2xl">
-    <p>
-      Full Stack Developer with over 1 year of professional experience in building web applications and digital
-      solutions.
-    </p>
-    <p>
-      Adaptable, self-taught, and passionate about continuous learning, I bring strong analytical abilities,
-      collaborative teamwork in agile environments, and effective technical communication.
-    </p>
-    <p>
-      Committed to delivering robust and efficient solutions that integrate business requirements and end-user
-      experience. Specialized in modern technologies, clean architectures, microservices, and SOLID principles.
-    </p>
+    <p>{t('sections.aboutMe.paragraph.1')}</p>
+    <p>{t('sections.aboutMe.paragraph.2')}</p>
+    <p>{t('sections.aboutMe.paragraph.3')}</p>
   </div>
 </article>
 

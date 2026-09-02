@@ -46,7 +46,7 @@
 
 @utility layout-grid {
   display: grid;
-  grid-template-columns: 1fr 2.5fr;
+  grid-template-columns: 1fr 2.25fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
     "header main main"

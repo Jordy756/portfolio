@@ -1,0 +1,42 @@
+---
+import Footer from '@components/chrome/Footer.astro';
+import Header from '@components/chrome/Header.astro';
+import Marquee from '@components/chrome/Marquee.astro';
+import AboutMe from '@components/sections/AboutMe.astro';
+import Experience from '@components/sections/Experience.astro';
+import IdkYet from '@components/sections/IdkYet.astro';
+import IdkYet2 from '@components/sections/IdkYet2.astro';
+import Layout from '@layouts/Layout.astro';
+import IdkYet3 from '@components/sections/IdkYet3.astro';
+import { getCurrentLanguage, useTranslations, type Language } from '@i18n/utils';
+
+export async function getStaticPaths() {
+  return [{ params: { locale: 'en' } }, { params: { locale: 'es' } }];
+}
+
+const language = getCurrentLanguage(Astro.currentLocale);
+const t = useTranslations(language);
+
+const phrases = [t('marquee.phrase.1'), t('marquee.phrase.2'), t('marquee.phrase.3'), t('marquee.phrase.4')];
+---
+
+<Layout title={t('pages.index.title')} description={t('pages.index.description')}>
+  <div class="relative layout-grid grid min-h-screen overflow-x-clip">
+    <Header class="grid-area-header" />
+    <main class="flex border-b-2 border-l-2 grid-area-main">
+      <section class="flex flex-1 flex-col">
+        <IdkYet3 />
+        <IdkYet2 />
+      </section>
+      <Marquee phrases={phrases} direction="vertical" />
+      <section class="flex flex-1 flex-col">
+        <Experience />
+      </section>
+    </main>
+    <aside class="flex flex-col grid-area-aside">
+      <AboutMe />
+      <!-- <IdkYet /> -->
+    </aside>
+    <Footer class="grid-area-footer" />
+  </div>
+</Layout>
