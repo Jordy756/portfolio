@@ -13,9 +13,9 @@ const phrases = ['Web Developer', 'Frontend Developer', 'Backend Developer', 'UI
 ---
 
 <Layout title="Home" description="Descripción de la página de inicio">
-  <div class="relative grid min-h-screen grid-cols-[1fr_2.25fr] grid-rows-[auto_1fr_auto] overflow-x-clip">
-    <Header class="col-start-1 row-start-1" />
-    <main class="col-span-2 col-start-2 row-span-2 row-start-1 flex border-b-2 border-l-2">
+  <div class="relative layout-grid grid min-h-screen overflow-x-clip">
+    <Header class="grid-area-header" />
+    <main class="flex border-b-2 border-l-2 grid-area-main">
       <section class="flex flex-1 flex-col">
         <IdkYet3 />
         <IdkYet2 />
@@ -25,10 +25,10 @@ const phrases = ['Web Developer', 'Frontend Developer', 'Backend Developer', 'UI
         <Experience />
       </section>
     </main>
-    <aside class="col-start-1 row-span-2 row-start-2 flex flex-col">
+    <aside class="flex flex-col grid-area-aside">
       <AboutMe />
       <!-- <IdkYet /> -->
     </aside>
-    <Footer class="col-span-2 col-start-2 row-start-3">footer</Footer>
+    <Footer class="grid-area-footer">footer</Footer>
   </div>
 </Layout>

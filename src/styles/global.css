@@ -23,9 +23,13 @@
   --writing-mode-sideways-lr: sideways-lr;
   --writing-mode-sideways-rl: sideways-rl;
 
+  --grid-area-header: header;
+  --grid-area-main: main;
+  --grid-area-aside: aside;
+  --grid-area-footer: footer;
+
   --animate-horizontal-marquee: horizontalMarqueeAnimation 10s linear infinite;
   --animate-vertical-marquee: verticalMarqueeAnimation 10s linear infinite;
-  --animate-bounce: bounceAnimation 2s ease-in-out infinite;
 
   @keyframes horizontalMarqueeAnimation {
     to {
@@ -38,16 +42,39 @@
       transform: translateY(calc(-100% - 32px));
     }
   }
+}
 
-  @keyframes bounceAnimation {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
+@utility layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header main main"
+    "aside main main"
+    "aside footer footer";
+  /*grid-template-areas:
+    'sidebar'
+    'toc'
+    'main';*/
+
+  /*@variant lg {
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      'sidebar toc'
+      'sidebar main';
   }
 
+  @variant xl {
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'sidebar main toc';
+    gap: 16px;
+  }*/
+}
+
+@utility grid-area-* {
+  grid-area: --value(--grid-area-*, [*]);
 }
 
 @utility writing-mode-* {
