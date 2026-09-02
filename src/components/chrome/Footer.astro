@@ -17,13 +17,13 @@ const links = [
 ];
 
 const socialLinks = [
-  { href: '', icon: GithubIcon },
-  { href: '', icon: LinkedInIcon },
+  { href: 'https://github.com/Jordy756', icon: GithubIcon },
+  { href: 'https://linkedin.com/in/yordicastro', icon: LinkedInIcon },
 ];
 ---
 
 <footer class:list={[className, 'flex items-center gap-4 border-l-2 px-8 py-4 text-sm uppercase']}>
-  <p>&copy; Jordy. {year}</p>
+  <p>&copy; JC. {year}</p>
   <ul class="flex items-center gap-4">
     {
       links.map((link) => (
@@ -33,12 +33,12 @@ const socialLinks = [
       ))
     }
   </ul>
-  <ul class="ml-auto flex items-center gap-2">
+  <ul class="ml-auto flex items-center gap-4">
     {
       socialLinks.map(({ href, icon: Icon }) => (
         <li>
-          <a href={href}>
-            <Icon width={24} height={24} class="size-6 text-neutral-950" />
+          <a href={href} target="_blank" rel="noopener noreferrer">
+            <Icon width={20} height={20} class="size-5 text-neutral-950" />
           </a>
         </li>
       ))
