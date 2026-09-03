@@ -1,24 +1,17 @@
 export const ui = {
   en: {
-    // Navigation
     'nav.home': 'Home',
     'nav.about': 'About',
     'nav.projects': 'Projects',
     'nav.contact': 'Contact',
 
-    // Header
-    'header.logo.alt': 'Logo',
+    'header.logo.alt': 'Logo JC',
 
-    // Footer
-    'footer.copyright': '© JC. {year}',
-
-    // Marquee (used by index.astro)
     'marquee.phrase.1': 'Web Developer',
     'marquee.phrase.2': 'Frontend Developer',
     'marquee.phrase.3': 'Backend Developer',
     'marquee.phrase.4': 'UI/UX Designer',
 
-    // Experience section
     'sections.experience.heading': 'Experience',
     'sections.experience.paragraph.1':
       'Mono X7 is a canvas for the digital age. An Internet-connected "link display" that fuses a record-thin 17.3-inch screen with a mini-computer, it creates an elegant, meditative space for experiencing the web like never before.',
@@ -27,7 +20,6 @@ export const ui = {
     'sections.experience.paragraph.3':
       'Mono X7 pre-orders are opening in October 2021. Sign up early to hear the instant Mono X7 is available in your region. Limited quantities available.',
 
-    // About Me section
     'sections.aboutMe.heading': 'About Me',
     'sections.aboutMe.paragraph.1':
       'Full Stack Developer with over 1 year of professional experience in building web applications and digital solutions.',
@@ -36,42 +28,32 @@ export const ui = {
     'sections.aboutMe.paragraph.3':
       'Committed to delivering robust and efficient solutions that integrate business requirements and end-user experience. Specialized in modern technologies, clean architectures, microservices, and SOLID principles.',
 
-    // Placeholder sections
     'sections.idkYet.image.alt': 'Profile image',
     'sections.idkYet2.image.alt': 'Still thinking',
     'sections.idkYet3.paragraph':
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, explicabo!',
 
-    // Layout meta
     'layout.meta.og.site_name': 'Alura Encryptor',
     'layout.meta.og.image.alt': 'Preview of Alura Encryptor for encrypting and decrypting texts',
 
-    // Pages
     'pages.index.title': 'Home',
     'pages.index.description': 'Description of the home page',
     'pages.404.title': '404 — Not Found',
     'pages.404.description': 'The page you are looking for does not exist.',
   },
   es: {
-    // Navigation
     'nav.home': 'Inicio',
     'nav.about': 'Sobre mí',
     'nav.projects': 'Proyectos',
     'nav.contact': 'Contacto',
 
-    // Header
     'header.logo.alt': 'Logo',
 
-    // Footer
-    'footer.copyright': '© JC. {year}',
-
-    // Marquee
     'marquee.phrase.1': 'Desarrollador Web',
     'marquee.phrase.2': 'Desarrollador Frontend',
     'marquee.phrase.3': 'Desarrollador Backend',
     'marquee.phrase.4': 'Diseñador UI/UX',
 
-    // Experience section
     'sections.experience.heading': 'Experiencia',
     'sections.experience.paragraph.1':
       'Mono X7 es un lienzo para la era digital. Una "pantalla de enlaces" conectada a Internet que fusiona una pantalla ultrafina de 17,3 pulgadas con un miniordenador, creando un espacio elegante y meditativo para experimentar la web como nunca antes.',
@@ -80,7 +62,6 @@ export const ui = {
     'sections.experience.paragraph.3':
       'Las reservas de Mono X7 se abren en octubre de 2021. Regístrate temprano para enterarte al instante de cuándo esté disponible Mono X7 en tu región. Cantidades limitadas.',
 
-    // About Me section
     'sections.aboutMe.heading': 'Sobre mí',
     'sections.aboutMe.paragraph.1':
       'Desarrollador Full Stack con más de 1 año de experiencia profesional en la construcción de aplicaciones web y soluciones digitales.',
@@ -89,17 +70,14 @@ export const ui = {
     'sections.aboutMe.paragraph.3':
       'Comprometido con entregar soluciones robustas y eficientes que integran los requisitos del negocio y la experiencia del usuario final. Especializado en tecnologías modernas, arquitecturas limpias, microservicios y principios SOLID.',
 
-    // Placeholder sections
     'sections.idkYet.image.alt': 'Imagen de perfil',
     'sections.idkYet2.image.alt': 'Aún por decidir',
     'sections.idkYet3.paragraph':
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, explicabo!',
 
-    // Layout meta
     'layout.meta.og.site_name': 'Alura Encryptor',
     'layout.meta.og.image.alt': 'Vista previa de Alura Encryptor para encriptar y desencriptar textos',
 
-    // Pages
     'pages.index.title': 'Inicio',
     'pages.index.description': 'Descripción de la página de inicio',
     'pages.404.title': '404 — Página no encontrada',

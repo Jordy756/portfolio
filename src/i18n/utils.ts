@@ -1,18 +1,18 @@
 import { ui } from "./ui";
 
-export const defaultLanguage = 'en';
-export const languages = ['en', 'es'] as const;
+export const defaultLocale = 'en';
+export const locales = ['en', 'es'] as const;
 
-export type Language = (typeof languages)[number];
+export type Locale = (typeof locales)[number];
 
-export const getCurrentLanguage = (currentLanguage: string | undefined): Language => {
-  return (currentLanguage ?? defaultLanguage) as Language;
+export const getCurrentLocale = (locale: string | undefined): Locale => {
+  return (locale ?? defaultLocale) as Locale;
 };
 
-export const useTranslations = (lang: keyof typeof ui) => {
-  const localizedUI: Record<string, string> = ui[lang];
+export const useTranslations = (locale: keyof typeof ui) => {
+  const localizedUI: Record<string, string> = ui[locale];
 
-  return function t(key: keyof (typeof ui)[typeof defaultLanguage]) {
-    return key in localizedUI ? localizedUI[key] : ui[defaultLanguage][key];
+  return function t(key: keyof (typeof ui)[typeof defaultLocale]) {
+    return key in localizedUI ? localizedUI[key] : ui[defaultLocale][key];
   };
-}
+};

@@ -1,7 +1,7 @@
 ---
 import GithubIcon from '@components/icons/GithubIcon.astro';
 import LinkedInIcon from '@components/icons/LinkedInIcon.astro';
-import { useTranslations, getCurrentLanguage } from '@i18n/utils';
+import { useTranslations, getCurrentLocale } from '@i18n/utils';
 
 interface Props {
   class?: string;
@@ -10,8 +10,8 @@ interface Props {
 const { class: className } = Astro.props;
 const year = new Date().getFullYear();
 
-const language = getCurrentLanguage(Astro.currentLocale);
-const t = useTranslations(language);
+const locale = getCurrentLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 
 const links = [
   { label: t('nav.home'), href: '' },
@@ -27,7 +27,7 @@ const socialLinks = [
 ---
 
 <footer class:list={[className, 'flex items-center gap-4 border-l-2 px-8 py-4 text-sm uppercase']}>
-  <p>{t('footer.copyright').replace('{year}', String(year))}</p>
+  <p>© JC. {year}</p>
   <ul class="flex items-center gap-4">
     {
       links.map((link) => (

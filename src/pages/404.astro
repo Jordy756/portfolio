@@ -1,13 +1,10 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import { getCurrentLanguage, useTranslations } from '@i18n/utils';
+import { getCurrentLocale, useTranslations } from '@i18n/utils';
 
-export async function getStaticPaths() {
-  return [{ params: { locale: 'en' } }, { params: { locale: 'es' } }];
-}
-
-const language = getCurrentLanguage(Astro.currentLocale);
-const t = useTranslations(language);
+const locale = getCurrentLocale(Astro.currentLocale);
+console.log({ Astro, currentLocale: Astro.currentLocale });
+const t = useTranslations(locale);
 ---
 
 <Layout title={t('pages.404.title')} description={t('pages.404.description')}>

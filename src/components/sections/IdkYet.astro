@@ -1,9 +1,9 @@
 ---
 import { Image } from 'astro:assets';
-import { useTranslations, getCurrentLanguage } from '@i18n/utils';
+import { useTranslations, getCurrentLocale } from '@i18n/utils';
 
-const language = getCurrentLanguage(Astro.currentLocale);
-const t = useTranslations(language);
+const locale = getCurrentLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 ---
 
 <article class="relative flex aspect-video border-t-2 p-4">

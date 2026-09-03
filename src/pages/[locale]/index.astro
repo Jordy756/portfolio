@@ -8,14 +8,14 @@ import IdkYet from '@components/sections/IdkYet.astro';
 import IdkYet2 from '@components/sections/IdkYet2.astro';
 import Layout from '@layouts/Layout.astro';
 import IdkYet3 from '@components/sections/IdkYet3.astro';
-import { getCurrentLanguage, useTranslations, type Language } from '@i18n/utils';
+import { getCurrentLocale, useTranslations, type Locale } from '@i18n/utils';
 
 export async function getStaticPaths() {
   return [{ params: { locale: 'en' } }, { params: { locale: 'es' } }];
 }
 
-const language = getCurrentLanguage(Astro.currentLocale);
-const t = useTranslations(language);
+const locale = getCurrentLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 
 const phrases = [t('marquee.phrase.1'), t('marquee.phrase.2'), t('marquee.phrase.3'), t('marquee.phrase.4')];
 ---

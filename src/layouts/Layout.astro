@@ -1,5 +1,5 @@
 ---
-import { getCurrentLanguage, useTranslations } from '@i18n/utils';
+import { getCurrentLocale, useTranslations } from '@i18n/utils';
 import '@styles/global.css';
 import { Font } from 'astro:assets';
 import { ClientRouter } from 'astro:transitions';
@@ -10,11 +10,11 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-const language = getCurrentLanguage(Astro.currentLocale);
-const t = useTranslations(language);
+const locale = getCurrentLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 
 const ogLocaleTag = (() => {
-  switch (language) {
+  switch (locale) {
     case 'es':
       return 'es_ES';
     case 'en':
@@ -32,7 +32,7 @@ const ogSiteName = t('layout.meta.og.site_name');
 ---
 
 <!doctype html>
-<html lang={language} class="scrollbar-none scrollbar-thumb-neutral-500 scrollbar-track-transparent scroll-smooth">
+<html lang={locale} class="scrollbar-none scrollbar-thumb-neutral-500 scrollbar-track-transparent scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

@@ -1,8 +1,8 @@
 ---
-import { useTranslations, getCurrentLanguage } from '@i18n/utils';
+import { useTranslations, getCurrentLocale } from '@i18n/utils';
 
-const language = getCurrentLanguage(Astro.currentLocale);
-const t = useTranslations(language);
+const locale = getCurrentLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 ---
 
 <article class="relative flex flex-1 flex-col items-center justify-center px-16 py-10 text-center">
