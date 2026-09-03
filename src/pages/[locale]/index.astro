@@ -9,6 +9,7 @@ import IdkYet2 from '@components/sections/IdkYet2.astro';
 import Layout from '@layouts/Layout.astro';
 import IdkYet3 from '@components/sections/IdkYet3.astro';
 import { getCurrentLocale, useTranslations, type Locale } from '@i18n/utils';
+import ContactMe from '@components/sections/ContactMe.astro';
 
 export async function getStaticPaths() {
   return [{ params: { locale: 'en' } }, { params: { locale: 'es' } }];
@@ -30,12 +31,14 @@ const phrases = [t('marquee.phrase.1'), t('marquee.phrase.2'), t('marquee.phrase
       </section>
       <Marquee phrases={phrases} direction="vertical" />
       <section class="flex flex-1 flex-col">
+        <ContactMe />
         <Experience />
       </section>
     </main>
     <aside class="flex flex-col grid-area-aside">
       <AboutMe />
-      <!-- <IdkYet /> -->
+      <!-- <ContactMe /> -->
+      <IdkYet />
     </aside>
     <Footer class="grid-area-footer" />
   </div>

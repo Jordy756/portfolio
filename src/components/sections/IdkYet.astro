@@ -6,12 +6,12 @@ const locale = getCurrentLocale(Astro.currentLocale);
 const t = useTranslations(locale);
 ---
 
-<article class="relative flex aspect-video border-t-2 p-4">
+<article class="relative flex flex-3 p-4">
   <Image
-    src="/work_02.png"
+    src="/girl.jpg"
     width={500}
     height={800}
     alt={t('sections.idkYet.image.alt')}
-    class="absolute top-0 left-0 size-full"
+    class="absolute top-0 left-0 size-full object-cover"
   />
 </article>

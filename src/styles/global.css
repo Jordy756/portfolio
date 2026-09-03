@@ -44,6 +44,21 @@
   }
 }
 
+@layer base {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+
+  :is(h1, h2, h3, h4, h5, h6) {
+    font-weight: var(--font-weight-semibold);
+    text-wrap: balance;
+  }
+
+  :is(button, a) {
+    cursor: pointer;
+  }
+}
+
 @utility layout-grid {
   display: grid;
   grid-template-columns: 1fr 2.25fr;
