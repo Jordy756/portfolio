@@ -30,6 +30,7 @@
 
   --animate-horizontal-marquee: horizontalMarqueeAnimation 10s linear infinite;
   --animate-vertical-marquee: verticalMarqueeAnimation 10s linear infinite;
+  --animate-skill-orbit: skillOrbit 25s linear infinite;
 
   @keyframes horizontalMarqueeAnimation {
     to {
@@ -40,6 +41,12 @@
   @keyframes verticalMarqueeAnimation {
     to {
       transform: translateY(calc(-100% - 32px));
+    }
+  }
+
+  @keyframes skillOrbit {
+    to {
+      transform: rotate(1turn);
     }
   }
 }

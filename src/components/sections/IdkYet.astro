@@ -6,12 +6,30 @@ const locale = getCurrentLocale(Astro.currentLocale);
 const t = useTranslations(locale);
 ---
 
-<article class="relative flex flex-3 p-4">
+<article
+  class="relative flex flex-3 overflow-hidden p-4 before:absolute before:inset-0 before:z-1 before:size-full before:bg-black/30"
+>
   <Image
-    src="/girl.jpg"
+    src="/girl.webp"
     width={500}
     height={800}
     alt={t('sections.idkYet.image.alt')}
-    class="absolute top-0 left-0 size-full object-cover"
+    class="absolute inset-0 size-full object-cover"
   />
+  <div class="absolute inset-0 z-10 flex items-center justify-center">
+    <svg
+      class="w-full max-w-md animate-skill-orbit motion-reduce:animate-none"
+      viewBox="0 0 200 200"
+      aria-label="Skills"
+    >
+      <defs>
+        <path id="skill-orbit" d="M 100,30 A 70,70 0 1,1 99.9,30" fill="none"></path>
+      </defs>
+      <text class="fill-neutral-50 text-xs font-semibold tracking-wider uppercase">
+        <textPath href="#skill-orbit" startOffset="0%">
+          TypeScript • React • Astro • Node.js • .NET • Tailwind • Git • SQL • Figma • HTML • CSS •
+        </textPath>
+      </text>
+    </svg>
+  </div>
 </article>
