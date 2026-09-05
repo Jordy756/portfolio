@@ -45,7 +45,7 @@ export default defineConfig({
       name: 'Bebas Neue',
       cssVariable: '--font-bebas-neue',
       provider: fontProviders.google(),
-      weights: [300, 400, 500, 600],
+      weights: [300, 400, 600],
       styles: ['normal'],
       subsets: ['latin'],
       display: 'swap',

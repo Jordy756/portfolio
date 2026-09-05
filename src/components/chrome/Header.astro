@@ -11,18 +11,18 @@ const { class: className } = Astro.props;
 
 const currentLocale = getCurrentLocale(Astro.currentLocale);
 const t = useTranslations(currentLocale);
-const baseClasses = 'px-5 py-1.5 flex-1 font-semibold text-center';
+const baseClasses = 'px-5 py-1.5 flex-1 font-semibold text-center text-xl';
 ---
 
 <header class:list={[className, 'flex items-center justify-between uppercase']}>
   <a href="" class="flex flex-[1.5] items-center justify-center px-4 py-2 text-center text-4xl">
     <Logo />
   </a>
-  <div class="flex flex-1 flex-col text-xl">
+  <div class="flex flex-1 flex-col">
     <a href="/" class:list={[baseClasses, 'border-2 border-t-0']}>{t('nav.projects')}</a>
     <a href="" class:list={[baseClasses, 'border-2 border-y-0']}>{t('nav.contact')}</a>
   </div>
-  <ul class="text-xl">
+  <ul>
     {
       locales.map((locale) => {
         const isCurrent = locale === currentLocale;
