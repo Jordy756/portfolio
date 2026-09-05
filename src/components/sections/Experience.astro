@@ -1,22 +1,16 @@
 ---
+import Section from '@components/chrome/Section.astro';
 import { useTranslations, getCurrentLocale } from '@i18n/utils';
 
 const locale = getCurrentLocale(Astro.currentLocale);
 const t = useTranslations(locale);
 ---
 
-<article class="relative flex-1 border-t-2">
-  <header class="absolute top-0 left-0 border-r-2 border-b-2 bg-neutral-50 px-2">
-    <h2 class="text-xl font-semibold uppercase">{t('sections.experience.heading')}</h2>
-  </header>
-  <div
-    class="flex max-h-80 scrollbar-thin flex-col gap-6 overflow-y-auto px-16 py-10 font-host-grotesk text-2xl"
-  >
-    <p>{t('sections.experience.paragraph.1')}</p>
-    <p>{t('sections.experience.paragraph.2')}</p>
-    <p>{t('sections.experience.paragraph.3')}</p>
-    <p>{t('sections.experience.paragraph.1')}</p>
-    <p>{t('sections.experience.paragraph.2')}</p>
-    <p>{t('sections.experience.paragraph.3')}</p>
-  </div>
-</article>
+<Section title={t('sections.experience.heading')} class="max-h-80">
+  <p>{t('sections.experience.paragraph.1')}</p>
+  <p>{t('sections.experience.paragraph.2')}</p>
+  <p>{t('sections.experience.paragraph.3')}</p>
+  <p>{t('sections.experience.paragraph.1')}</p>
+  <p>{t('sections.experience.paragraph.2')}</p>
+  <p>{t('sections.experience.paragraph.3')}</p>
+</Section>

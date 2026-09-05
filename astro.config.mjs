@@ -41,6 +41,17 @@ export default defineConfig({
       formats: ['woff2'],
       fallbacks: ['sans-serif', 'system-ui'],
     },
+    {
+      name: 'Bebas Neue',
+      cssVariable: '--font-bebas-neue',
+      provider: fontProviders.google(),
+      weights: [300, 400, 500, 600],
+      styles: ['normal'],
+      subsets: ['latin'],
+      display: 'swap',
+      formats: ['woff2'],
+      fallbacks: ['sans-serif', 'system-ui'],
+    }
   ],
 
   vite: {

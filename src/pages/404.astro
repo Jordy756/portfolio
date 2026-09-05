@@ -3,7 +3,6 @@ import Layout from '@layouts/Layout.astro';
 import { getCurrentLocale, useTranslations } from '@i18n/utils';
 
 const locale = getCurrentLocale(Astro.currentLocale);
-console.log({ Astro, currentLocale: Astro.currentLocale });
 const t = useTranslations(locale);
 ---
 

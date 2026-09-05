@@ -1,6 +1,7 @@
 ---
 import GithubIcon from '@components/icons/GithubIcon.astro';
 import LinkedInIcon from '@components/icons/LinkedInIcon.astro';
+import SpotifyIcon from '@components/icons/SpotifyIcon.astro';
 import { useTranslations, getCurrentLocale } from '@i18n/utils';
 
 interface Props {
@@ -23,6 +24,7 @@ const links = [
 const socialLinks = [
   { href: 'https://github.com/Jordy756', icon: GithubIcon },
   { href: 'https://linkedin.com/in/yordicastro', icon: LinkedInIcon },
+  { href: '', icon: SpotifyIcon },
 ];
 ---
 
@@ -42,7 +44,7 @@ const socialLinks = [
       socialLinks.map(({ href, icon: Icon }) => (
         <li>
           <a href={href} target="_blank" rel="noopener noreferrer">
-            <Icon width={20} height={20} class="size-5 text-neutral-950" />
+            <Icon width={20} height={20} class="h-5 w-auto text-neutral-950" />
           </a>
         </li>
       ))
