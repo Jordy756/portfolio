@@ -30,8 +30,7 @@ export const ui = {
 
     'sections.idkYet.image.alt': 'Profile image',
     'sections.idkYet2.image.alt': 'Still thinking',
-    'sections.idkYet3.paragraph':
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, explicabo!',
+    'sections.idkYet3.paragraph': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, explicabo!',
 
     'layout.meta.og.site_name': 'Alura Encryptor',
     'layout.meta.og.image.alt': 'Preview of Alura Encryptor for encrypting and decrypting texts',
@@ -72,8 +71,7 @@ export const ui = {
 
     'sections.idkYet.image.alt': 'Imagen de perfil',
     'sections.idkYet2.image.alt': 'Aún por decidir',
-    'sections.idkYet3.paragraph':
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, explicabo!',
+    'sections.idkYet3.paragraph': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, explicabo!',
 
     'layout.meta.og.site_name': 'Alura Encryptor',
     'layout.meta.og.image.alt': 'Vista previa de Alura Encryptor para encriptar y desencriptar textos',

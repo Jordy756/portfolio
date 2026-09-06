@@ -72,9 +72,9 @@
   grid-template-columns: 1fr 2.25fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
-    "header main main"
-    "aside main main"
-    "aside footer footer";
+    'header main main'
+    'aside main main'
+    'aside footer footer';
   /*grid-template-areas:
     'sidebar'
     'toc'

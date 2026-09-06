@@ -51,7 +51,7 @@ export default defineConfig({
       display: 'swap',
       formats: ['woff2'],
       fallbacks: ['sans-serif', 'system-ui'],
-    }
+    },
   ],
 
   vite: {
