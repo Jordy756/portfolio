@@ -1,7 +1,10 @@
 ---
-
+import DownloadIcon from '@components/icons/DownloadIcon.astro';
 ---
 
-<article class="flex flex-1 flex-col items-center justify-center">
-  <p class="text-2xl">Put something here.</p>
+<article class="relative flex flex-1 flex-col items-end justify-end">
+  <a class="flex items-center justify-center gap-3 border-t-2 border-l-2 px-5 py-1.5 text-xl font-semibold uppercase">
+    Download CV
+    <DownloadIcon width={20} height={20} class="size-5" />
+  </a>
 </article>

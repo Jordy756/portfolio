@@ -2,8 +2,21 @@
 import { getCurrentLocale, useTranslations } from '@i18n/utils';
 import { Image } from 'astro:assets';
 
+interface Props {
+  width?: number;
+  height?: number;
+  class?: string;
+}
+
+const { class: className, width = 237, height = 55 } = Astro.props as Props;
 const locale = getCurrentLocale(Astro.currentLocale);
 const t = useTranslations(locale);
 ---
 
-<Image src="/logo.webp" width={237} height={55} alt={t('header.logo.alt')} class="h-14 w-auto object-contain" />
+<Image
+  src="/logo.webp"
+  width={width}
+  height={height}
+  alt={t('header.logo.alt')}
+  class:list={[className, 'h-14 w-auto object-contain']}
+/>
