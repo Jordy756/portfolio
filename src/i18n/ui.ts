@@ -94,7 +94,7 @@ const experience = {
 
 const contactMe = {
   en: {
-    'contactMe.heading': 'Let\'s build together.',
+    'contactMe.heading': "Let's build together.",
     'contactMe.sendMessage': 'Send Message',
   },
   es: {
