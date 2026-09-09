@@ -22,15 +22,15 @@ const phrases = [t('marquee.phrase.1'), t('marquee.phrase.2'), t('marquee.phrase
   <div class="relative layout-grid grid min-h-screen overflow-x-clip">
     <Header class="grid-area-header" />
     <main class="flex border-b-2 border-l-2 grid-area-main">
-      <section class="flex flex-1 flex-col">
+      <div class="flex flex-1 flex-col">
         <DownloadCV />
         <HeroImage />
-      </section>
+      </div>
       <Marquee phrases={phrases} direction="vertical" />
-      <section class="flex flex-1 flex-col">
+      <div class="flex flex-1 flex-col">
         <ContactMe />
         <Experience />
-      </section>
+      </div>
     </main>
     <aside class="flex flex-col grid-area-aside">
       <AboutMe />

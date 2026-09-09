@@ -1,15 +1,23 @@
-const nav = {
+const navigation = {
   en: {
     'nav.home': 'Home',
     'nav.about': 'About',
     'nav.projects': 'Projects',
     'nav.contact': 'Contact',
+    'nav.aria.main': 'Main',
+    'nav.aria.languages': 'Language selector',
+    'nav.aria.footer': 'Site',
+    'nav.aria.social': 'Social media',
   },
   es: {
     'nav.home': 'Inicio',
     'nav.about': 'Sobre mí',
     'nav.projects': 'Proyectos',
     'nav.contact': 'Contacto',
+    'nav.aria.main': 'Principal',
+    'nav.aria.languages': 'Selector de idioma',
+    'nav.aria.footer': 'Sitio',
+    'nav.aria.social': 'Redes sociales',
   },
 };
 
@@ -153,7 +161,7 @@ const notFound = {
 
 export const ui = {
   en: {
-    ...nav.en,
+    ...navigation.en,
     ...header.en,
     ...marquee.en,
     ...hero.en,
@@ -166,7 +174,7 @@ export const ui = {
     ...notFound.en,
   },
   es: {
-    ...nav.es,
+    ...navigation.es,
     ...header.es,
     ...marquee.es,
     ...hero.es,

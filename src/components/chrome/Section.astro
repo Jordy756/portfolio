@@ -7,7 +7,7 @@ interface Props {
 const { title, class: className } = Astro.props;
 ---
 
-<article class="relative flex flex-1 flex-col border-t-2">
+<section class="relative flex flex-1 flex-col border-t-2">
   <header class="absolute top-0 left-0 border-r-2 border-b-2 bg-neutral-50 px-2">
     <h2 class="text-xl font-semibold uppercase">{title}</h2>
   </header>
@@ -19,4 +19,4 @@ const { title, class: className } = Astro.props;
   >
     <slot />
   </div>
-</article>
+</section>

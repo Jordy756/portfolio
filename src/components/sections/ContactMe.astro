@@ -6,7 +6,7 @@ const locale = getCurrentLocale(Astro.currentLocale);
 const t = useTranslations(locale);
 ---
 
-<article class="relative flex flex-3 flex-col justify-center px-16 py-10">
+<section class="relative flex flex-3 flex-col justify-center px-16 py-10">
   <header>
     <h2 class="font-bebas-neue text-9xl font-semibold uppercase">
       {t('contactMe.heading')}
@@ -21,4 +21,4 @@ const t = useTranslations(locale);
     {t('contactMe.sendMessage')}
     <ArrowOutwardIcon width={12} height={12} class="size-3" />
   </a>
-</article>
+</section>

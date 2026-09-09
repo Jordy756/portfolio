@@ -16,12 +16,13 @@ const { phrases, direction = 'horizontal', class: className } = Astro.props;
   ]}
 >
   {
-    [0, 1].map((_) => (
+    Array.from({ length: 2 }).map((_, index) => (
       <ul
         class:list={[
           'flex gap-8',
           direction === 'vertical' ? 'animate-vertical-marquee' : 'animate-horizontal-marquee',
         ]}
+        aria-hidden={index > 0 ? 'true' : undefined}
       >
         {phrases.map((phrase) => (
           <li
@@ -39,4 +40,3 @@ const { phrases, direction = 'horizontal', class: className } = Astro.props;
     ))
   }
 </aside>
-<!-- animate-marquee -->

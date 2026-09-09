@@ -6,7 +6,7 @@ const currentLocale = getCurrentLocale(Astro.currentLocale);
 const t = useTranslations(currentLocale);
 ---
 
-<article class="relative flex flex-1 flex-col items-end justify-end">
+<div class="relative flex flex-1 flex-col items-end justify-end">
   <a
     href={`/docs/Yordi_Castro_CV_${currentLocale.toLocaleUpperCase()}.pdf`}
     class="flex items-center justify-center gap-3 border-t-2 border-l-2 px-5 py-1.5 text-xl font-semibold uppercase"
@@ -16,4 +16,4 @@ const t = useTranslations(currentLocale);
     {t('hero.downloadCV')}
     <DownloadIcon width={20} height={20} class="size-4" />
   </a>
-</article>
+</div>
