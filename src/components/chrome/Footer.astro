@@ -22,9 +22,13 @@ const links = [
 ];
 
 const socialLinks = [
-  { href: 'https://github.com/Jordy756', icon: GithubIcon },
-  { href: 'https://linkedin.com/in/yordicastro', icon: LinkedInIcon },
-  { href: '', icon: SpotifyIcon },
+  { href: 'https://github.com/Jordy756', icon: GithubIcon, ariaLabel: t('github.ariaLabel') },
+  { href: 'https://linkedin.com/in/yordicastro', icon: LinkedInIcon, ariaLabel: t('linkedin.ariaLabel') },
+  {
+    href: 'https://open.spotify.com/playlist/4ewXGXY1TdZoTXzNMwSFWq?si=3910839d21a243e3',
+    icon: SpotifyIcon,
+    ariaLabel: t('spotify.ariaLabel'),
+  },
 ];
 ---
 
@@ -41,9 +45,9 @@ const socialLinks = [
   </ul>
   <ul class="ml-auto flex items-center gap-4">
     {
-      socialLinks.map(({ href, icon: Icon }) => (
+      socialLinks.map(({ href, icon: Icon, ariaLabel }) => (
         <li>
-          <a href={href} target="_blank" rel="noopener noreferrer">
+          <a href={href} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel} title={ariaLabel}>
             <Icon width={20} height={20} class="h-5 w-auto text-neutral-950" />
           </a>
         </li>

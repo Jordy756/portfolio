@@ -1,10 +1,19 @@
 ---
 import DownloadIcon from '@components/icons/DownloadIcon.astro';
+import { getCurrentLocale, useTranslations } from '@i18n/utils';
+
+const currentLocale = getCurrentLocale(Astro.currentLocale);
+const t = useTranslations(currentLocale);
 ---
 
 <article class="relative flex flex-1 flex-col items-end justify-end">
-  <a class="flex items-center justify-center gap-3 border-t-2 border-l-2 px-5 py-1.5 text-xl font-semibold uppercase">
-    Download CV
-    <DownloadIcon width={20} height={20} class="size-5" />
+  <a
+    href={`/docs/Yordi_Castro_CV_${currentLocale.toLocaleUpperCase()}.pdf`}
+    class="flex items-center justify-center gap-3 border-t-2 border-l-2 px-5 py-1.5 text-xl font-semibold uppercase"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {t('hero.downloadCV')}
+    <DownloadIcon width={20} height={20} class="size-4" />
   </a>
 </article>

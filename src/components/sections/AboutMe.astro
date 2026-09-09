@@ -1,14 +1,13 @@
 ---
 import Section from '@components/chrome/Section.astro';
-import ArrowOutwardIcon from '@components/icons/ArrowOutwardIcon.astro';
-import { useTranslations, getCurrentLocale } from '@i18n/utils';
+import { getCurrentLocale, useTranslations } from '@i18n/utils';
 
 const locale = getCurrentLocale(Astro.currentLocale);
 const t = useTranslations(locale);
 ---
 
-<Section title={t('sections.aboutMe.heading')}>
-  <p>{t('sections.aboutMe.paragraph.1')}</p>
-  <p>{t('sections.aboutMe.paragraph.2')}</p>
-  <p>{t('sections.aboutMe.paragraph.3')}</p>
+<Section title={t('aboutMe.heading')}>
+  <p>{t('aboutMe.paragraph.1')}</p>
+  <p>{t('aboutMe.paragraph.2')}</p>
+  <p>{t('aboutMe.paragraph.3')}</p>
 </Section>

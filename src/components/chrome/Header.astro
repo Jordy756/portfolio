@@ -15,8 +15,13 @@ const baseClasses = 'px-5 py-1.5 flex-1 font-semibold text-center text-xl';
 ---
 
 <header class:list={[className, 'flex items-center justify-between uppercase']}>
-  <a href="" class="flex flex-[1.5] items-center justify-center px-4 py-2 text-center text-4xl">
-    <Logo />
+  <a
+    href={`/${currentLocale}/#root`}
+    class="flex flex-[1.5] items-center justify-center px-4 py-2"
+    aria-label={t('header.logo.action')}
+    title={t('header.logo.action')}
+  >
+    <Logo width={242} height={56} class="h-14 w-auto fill-neutral-950" />
   </a>
   <div class="flex flex-1 flex-col">
     <a href="/" class:list={[baseClasses, 'border-2 border-t-0']}>{t('nav.projects')}</a>

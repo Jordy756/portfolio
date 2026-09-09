@@ -4,15 +4,13 @@ import Header from '@components/chrome/Header.astro';
 import Marquee from '@components/chrome/Marquee.astro';
 import AboutMe from '@components/sections/AboutMe.astro';
 import Experience from '@components/sections/Experience.astro';
-import IdkYet2 from '@components/sections/IdkYet2.astro';
+import HeroImage from '@components/sections/HeroImage.astro';
 import Layout from '@layouts/Layout.astro';
-import IdkYet3 from '@components/sections/IdkYet3.astro';
+import DownloadCV from '@components/sections/DownloadCV.astro';
 import { getCurrentLocale, useTranslations } from '@i18n/utils';
 import ContactMe from '@components/sections/ContactMe.astro';
 
-export async function getStaticPaths() {
-  return [{ params: { locale: 'en' } }, { params: { locale: 'es' } }];
-}
+export const getStaticPaths = async () => [{ params: { locale: 'en' } }, { params: { locale: 'es' } }];
 
 const locale = getCurrentLocale(Astro.currentLocale);
 const t = useTranslations(locale);
@@ -20,13 +18,13 @@ const t = useTranslations(locale);
 const phrases = [t('marquee.phrase.1'), t('marquee.phrase.2'), t('marquee.phrase.3'), t('marquee.phrase.4')];
 ---
 
-<Layout title={t('pages.index.title')} description={t('pages.index.description')}>
+<Layout title={t('home.title')} description={t('home.description')}>
   <div class="relative layout-grid grid min-h-screen overflow-x-clip">
     <Header class="grid-area-header" />
     <main class="flex border-b-2 border-l-2 grid-area-main">
       <section class="flex flex-1 flex-col">
-        <IdkYet3 />
-        <IdkYet2 />
+        <DownloadCV />
+        <HeroImage />
       </section>
       <Marquee phrases={phrases} direction="vertical" />
       <section class="flex flex-1 flex-col">
