@@ -24,30 +24,32 @@ const baseClasses = 'px-5 py-1.5 flex-1 font-semibold text-center text-xl';
     <Logo width={242} height={56} class="h-14 w-auto fill-neutral-950" />
   </a>
   <nav aria-label={t('nav.aria.main')} class="flex flex-1 flex-col">
-    <a href="#projects" class:list={[baseClasses, 'border-2 border-t-0']}>{t('nav.projects')}</a>
-    <a href="#contact" class:list={[baseClasses, 'border-2 border-y-0']}>{t('nav.contact')}</a>
+    <a href="#projects" class:list={[baseClasses, 'border-2 border-t-0']}>
+      {t('nav.projects')}
+    </a>
+    <a href="#contact" class:list={[baseClasses, 'border-2 border-y-0']}>
+      {t('nav.contact')}
+    </a>
   </nav>
   <nav aria-label={t('nav.aria.languages')}>
     <ul>
-      {
-        locales.map((locale) => {
-          const isCurrent = locale === currentLocale;
+      {locales.map((locale) => {
+        const isCurrent = locale === currentLocale;
 
-          return (
-            <li class="flex not-last:border-b-2">
-              {isCurrent ? (
-                <span class:list={[baseClasses, 'bg-neutral-950 text-neutral-50']} aria-current="page">
-                  {locale}
-                </span>
-              ) : (
-                <a href={getRelativeLocaleUrl(locale, '')} hreflang={locale} class:list={[baseClasses]}>
-                  {locale}
-                </a>
-              )}
-            </li>
-          );
-        })
-      }
+        return (
+          <li class="flex not-last:border-b-2">
+            {isCurrent ? (
+              <span class:list={[baseClasses, 'bg-neutral-950 text-neutral-50']} aria-current="page">
+                {locale}
+              </span>
+            ) : (
+              <a href={getRelativeLocaleUrl(locale, '')} hreflang={locale} class:list={[baseClasses]}>
+                {locale}
+              </a>
+            )}
+          </li>
+        );
+      })}
     </ul>
   </nav>
 </header>

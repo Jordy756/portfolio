@@ -36,26 +36,22 @@ const socialLinks = [
   <p>© JC. {year}</p>
   <nav aria-label={t('nav.aria.footer')}>
     <ul class="flex items-center gap-4">
-      {
-        links.map((link) => (
-          <li>
-            <a href={link.href}>{link.label}</a>
-          </li>
-        ))
-      }
+      {links.map((link) => (
+        <li>
+          <a href={link.href}>{link.label}</a>
+        </li>
+      ))}
     </ul>
   </nav>
   <nav aria-label={t('nav.aria.social')} class="ml-auto">
     <ul class="flex items-center gap-4">
-      {
-        socialLinks.map(({ href, icon: Icon, ariaLabel }) => (
-          <li>
-            <a href={href} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel} title={ariaLabel}>
-              <Icon width={20} height={20} class="h-5 w-auto text-neutral-950" />
-            </a>
-          </li>
-        ))
-      }
+      {socialLinks.map(({ href, icon: Icon, ariaLabel }) => (
+        <li>
+          <a href={href} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel} title={ariaLabel}>
+            <Icon width={20} height={20} class="h-5 w-auto text-neutral-950" />
+          </a>
+        </li>
+      ))}
     </ul>
   </nav>
 </footer>

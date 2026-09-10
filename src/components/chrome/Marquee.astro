@@ -15,28 +15,23 @@ const { phrases, direction = 'horizontal', class: className } = Astro.props;
     'flex gap-8 overflow-hidden bg-neutral-950 p-3 text-4xl font-semibold text-neutral-50 hover:[&>ul]:[animation-play-state:paused]',
   ]}
 >
-  {
-    Array.from({ length: 2 }).map((_, index) => (
-      <ul
-        class:list={[
-          'flex gap-8',
-          direction === 'vertical' ? 'animate-vertical-marquee' : 'animate-horizontal-marquee',
-        ]}
-        aria-hidden={index > 0 ? 'true' : undefined}
-      >
-        {phrases.map((phrase) => (
-          <li
-            class:list={[
-              'relative whitespace-nowrap uppercase',
-              direction === 'horizontal'
-                ? 'after:absolute after:top-1/2 after:-right-5 after:size-2 after:-translate-y-1/2 after:rounded-full after:bg-neutral-50'
-                : 'after:absolute after:-bottom-5 after:left-1/2 after:size-2 after:-translate-x-1/2 after:rounded-full after:bg-neutral-50',
-            ]}
-          >
-            {phrase}
-          </li>
-        ))}
-      </ul>
-    ))
-  }
+  {Array.from({ length: 2 }).map((_, index) => (
+    <ul
+      class:list={['flex gap-8', direction === 'vertical' ? 'animate-vertical-marquee' : 'animate-horizontal-marquee']}
+      aria-hidden={index > 0 ? 'true' : undefined}
+    >
+      {phrases.map((phrase) => (
+        <li
+          class:list={[
+            'relative whitespace-nowrap uppercase',
+            direction === 'horizontal'
+              ? 'after:absolute after:top-1/2 after:-right-5 after:size-2 after:-translate-y-1/2 after:rounded-full after:bg-neutral-50'
+              : 'after:absolute after:-bottom-5 after:left-1/2 after:size-2 after:-translate-x-1/2 after:rounded-full after:bg-neutral-50',
+          ]}
+        >
+          {phrase}
+        </li>
+      ))}
+    </ul>
+  ))}
 </aside>
