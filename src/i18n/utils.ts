@@ -1,4 +1,3 @@
-
 import { ui, content } from '@i18n/ui';
 
 export const defaultLocale = 'en';
