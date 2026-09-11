@@ -1,0 +1,22 @@
+{
+  "aboutMe": {
+    "heading": "Sobre mí",
+    "paragraphs": [
+      "Desarrollador Full Stack con más de 1 año de experiencia profesional en la construcción de aplicaciones web y soluciones digitales.",
+      "Adaptable, autodidacta y apasionado por el aprendizaje continuo, aporto sólidas capacidades analíticas, trabajo colaborativo en entornos ágiles y comunicación técnica eficaz.",
+      "Comprometido con entregar soluciones robustas y eficientes que integran los requisitos del negocio y la experiencia del usuario final. Especializado en tecnologías modernas, arquitecturas limpias, microservicios y principios SOLID."
+    ]
+  },
+  "experience": {
+    "heading": "Experiencia",
+    "paragraphs": [
+      "Mono X7 es un lienzo para la era digital. Una \"pantalla de enlaces\" conectada a Internet que fusiona una pantalla ultrafina de 17,3 pulgadas con un miniordenador, creando un espacio elegante y meditativo para experimentar la web como nunca antes.",
+      "Diseñado para lo mejor que ofrece la web: fotografía impresionante, pósteres e ilustraciones, animaciones poéticas, experimentos o visualizaciones dinámicas creadas con código. Con Mono X7, las joyas digitales se convierten en tesoros. Un tributo a los creadores digitales de todo el mundo.",
+      "Las reservas de Mono X7 se abren en octubre de 2021. Regístrate temprano para enterarte al instante de cuándo esté disponible Mono X7 en tu región. Cantidades limitadas."
+    ]
+  },
+  "contactMe": {
+    "heading": "Creamos algo grande?",
+    "sendMessage": "Enviar Mensaje"
+  }
+}

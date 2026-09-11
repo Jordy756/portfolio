@@ -1,4 +1,5 @@
 import { ui } from './ui';
+import { content } from './content';
 
 export const defaultLocale = 'en';
 export const locales = ['en', 'es'] as const;
@@ -16,3 +17,5 @@ export const useTranslations = (locale: keyof typeof ui) => {
     return key in localizedUI ? localizedUI[key] : ui[defaultLocale][key];
   };
 };
+
+export const useContent = (locale: keyof typeof content) => content[locale];

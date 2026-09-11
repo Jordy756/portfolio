@@ -1,13 +1,13 @@
 ---
 import Section from '@components/chrome/Section.astro';
-import { getCurrentLocale, useTranslations } from '@i18n/utils';
+import { getCurrentLocale, useContent } from '@i18n/utils';
 
 const locale = getCurrentLocale(Astro.currentLocale);
-const t = useTranslations(locale);
+const c = useContent(locale);
 ---
 
-<Section title={t('aboutMe.heading')}>
-  <p>{t('aboutMe.paragraph.1')}</p>
-  <p>{t('aboutMe.paragraph.2')}</p>
-  <p>{t('aboutMe.paragraph.3')}</p>
+<Section title={c.aboutMe.heading}>
+  {c.aboutMe.paragraphs.map((paragraph) => (
+    <p>{paragraph}</p>
+  ))}
 </Section>

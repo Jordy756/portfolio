@@ -1,0 +1,22 @@
+{
+  "aboutMe": {
+    "heading": "About Me",
+    "paragraphs": [
+      "Full Stack Developer with over 1 year of professional experience in building web applications and digital solutions.",
+      "Adaptable, self-taught, and passionate about continuous learning, I bring strong analytical abilities, collaborative teamwork in agile environments, and effective technical communication.",
+      "Committed to delivering robust and efficient solutions that integrate business requirements and end-user experience. Specialized in modern technologies, clean architectures, microservices, and SOLID principles."
+    ]
+  },
+  "experience": {
+    "heading": "Experience",
+    "paragraphs": [
+      "Mono X7 is a canvas for the digital age. An Internet-connected \"link display\" that fuses a record-thin 17.3-inch screen with a mini-computer, it creates an elegant, meditative space for experiencing the web like never before.",
+      "Designed for the best the Web has to offer: stunning photography, posters and illustrations, poetic animations, experiments or dynamic visualizations created with code. With Mono X7, digital gems turn into treasures. A tribute to digital creators worldwide.",
+      "Mono X7 pre-orders are opening in October 2021. Sign up early to hear the instant Mono X7 is available in your region. Limited quantities available."
+    ]
+  },
+  "contactMe": {
+    "heading": "Let's build together.",
+    "sendMessage": "Send Message"
+  }
+}
