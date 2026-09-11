@@ -11,11 +11,11 @@ const { phrases, direction = 'horizontal', class: className } = Astro.props;
 <aside
   class:list={[
     className,
-    direction === 'horizontal' ? 'h-fit w-full' : 'h-[calc(100dvh-54px)] w-fit writing-mode-vertical-rl',
-    'flex gap-8 overflow-hidden bg-neutral-950 p-3 text-4xl font-semibold text-neutral-50 hover:[&>ul]:[animation-play-state:paused]',
+    direction === 'horizontal' ? 'h-fit w-full' : 'h-full w-fit writing-mode-vertical-rl',
+    'flex gap-8 overflow-y-hidden bg-neutral-950 p-3 text-4xl font-semibold text-neutral-50 hover:[&>ul]:[animation-play-state:paused]',
   ]}
 >
-  {Array.from({ length: 2 }).map((_, index) => (
+  {Array.from({ length: 3 }).map((_, index) => (
     <ul
       class:list={['flex gap-8', direction === 'vertical' ? 'animate-vertical-marquee' : 'animate-horizontal-marquee']}
       aria-hidden={index > 0 ? 'true' : undefined}

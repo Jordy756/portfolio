@@ -19,22 +19,22 @@ const phrases = [t('marquee.phrase.1'), t('marquee.phrase.2'), t('marquee.phrase
 ---
 
 <Layout title={t('home.title')} description={t('home.description')}>
-  <div class="relative layout-grid grid min-h-screen overflow-x-clip">
+  <div class="relative layout-grid overflow-x-clip min-h-screen">
     <Header class="grid-area-header" />
+    <aside class="flex flex-col grid-area-aside">
+      <AboutMe />
+    </aside>
     <main class="flex border-b-2 border-l-2 grid-area-main">
       <div class="flex flex-1 flex-col">
         <DownloadCV />
         <HeroImage />
       </div>
-      <Marquee phrases={phrases} direction="vertical" />
+      <Marquee phrases={phrases} direction="vertical" class="-mb-13.5" />
       <div class="flex flex-1 flex-col">
         <ContactMe />
         <Experience />
       </div>
     </main>
-    <aside class="flex flex-col grid-area-aside">
-      <AboutMe />
-    </aside>
     <Footer class="grid-area-footer" />
   </div>
 </Layout>
