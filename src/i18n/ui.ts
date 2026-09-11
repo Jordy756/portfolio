@@ -1,3 +1,6 @@
+import en from '@data/en.json';
+import es from '@data/es.json';
+
 const navigation = {
   en: {
     'nav.home': 'Home',
@@ -128,3 +131,5 @@ export const ui = {
     ...notFound.es,
   },
 } as const;
+
+export const content = { en, es } as const;

@@ -1,5 +1,5 @@
-import { ui } from './ui';
-import { content } from './content';
+
+import { ui, content } from '@i18n/ui';
 
 export const defaultLocale = 'en';
 export const locales = ['en', 'es'] as const;
@@ -18,4 +18,4 @@ export const useTranslations = (locale: keyof typeof ui) => {
   };
 };
 
-export const useContent = (locale: keyof typeof content) => content[locale];
+export const useContent = (locale: Locale) => content[locale];
