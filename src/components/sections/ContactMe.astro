@@ -6,13 +6,13 @@ const locale = getCurrentLocale(Astro.currentLocale);
 const c = useContent(locale);
 ---
 
-<section class="relative flex flex-3 flex-col justify-center px-16 py-10">
+<section class="relative flex flex-3 flex-col justify-center px-16 py-10 border-b-2 border-neutral-950">
   <header>
-    <h2 class="font-bebas-neue text-9xl font-semibold uppercase">{c.contactMe.heading}</h2>
+    <h2 class="font-bebas-neue 2xl:text-9xl text-5xl xl:text-8xl font-semibold uppercase">{c.contactMe.heading}</h2>
   </header>
   <a
     href="mailto:jordycastro1756@gmail.com"
-    class="absolute right-0 bottom-0 flex items-center justify-center gap-3 border-t-2 border-l-2 bg-neutral-50 px-5 py-1.5 text-center text-xl font-semibold uppercase"
+    class="absolute right-0 bottom-0 flex items-center justify-center gap-3 border-t-2 border-l-2 border-neutral-950 bg-neutral-50 px-5 py-1.5 text-center text-xl font-semibold uppercase"
     target="_blank"
     rel="noopener noreferrer"
   >

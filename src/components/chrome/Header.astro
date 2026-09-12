@@ -11,10 +11,10 @@ const { class: className } = Astro.props;
 
 const currentLocale = getCurrentLocale(Astro.currentLocale);
 const t = useTranslations(currentLocale);
-const baseClasses = 'px-5 py-1.5 flex-1 font-semibold text-center text-xl';
+const baseClasses = 'px-5 py-1.5 flex-1 font-semibold text-center text-xl border-neutral-950';
 ---
 
-<header class:list={[className, 'flex items-center justify-between uppercase']}>
+<header class:list={[className, 'flex items-center justify-between uppercase border-b-2 border-neutral-950']}>
   <a
     href={`/${currentLocale}/#root`}
     class="flex flex-[1.5] items-center justify-center px-4 py-2"
@@ -24,7 +24,7 @@ const baseClasses = 'px-5 py-1.5 flex-1 font-semibold text-center text-xl';
     <Logo width={242} height={56} class="h-14 w-auto fill-neutral-950" />
   </a>
   <nav aria-label={t('nav.aria.main')} class="flex flex-1 flex-col">
-    <a href="#projects" class:list={[baseClasses, 'border-2 border-t-0']}>
+    <a href="#projects" class:list={[baseClasses, 'border-2 border-t-0 ']}>
       {t('nav.projects')}
     </a>
     <a href="#contact" class:list={[baseClasses, 'border-2 border-y-0']}>
@@ -37,7 +37,7 @@ const baseClasses = 'px-5 py-1.5 flex-1 font-semibold text-center text-xl';
         const isCurrent = locale === currentLocale;
 
         return (
-          <li class="flex not-last:border-b-2">
+          <li class="flex not-last:border-b-2 border-neutral-950">
             {isCurrent ? (
               <span class:list={[baseClasses, 'bg-neutral-950 text-neutral-50']} aria-current="page">
                 {locale}

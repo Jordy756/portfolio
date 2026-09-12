@@ -16,7 +16,7 @@
   --font-host-grotesk: var(--font-host-grotesk);
   --font-bebas-neue: var(--font-bebas-neue);
 
-  --max-width: 1200px;
+  --max-width: 1920px;
 
   --writing-mode-horizontal-tb: horizontal-tb;
   --writing-mode-vertical-lr: vertical-lr;
@@ -95,6 +95,10 @@
     grid-template-areas: 'sidebar main toc';
     gap: 16px;
   }*/
+}
+
+@utility w-page {
+  width: min(100%, var(--max-width));
 }
 
 @utility grid-area-* {
