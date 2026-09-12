@@ -39,9 +39,9 @@ const baseClasses = 'px-5 py-1.5 font-semibold text-center text-xl border-neutra
         return (
           <li class="flex not-last:border-b-2 border-neutral-950">
             {isCurrent ? (
-              <a class:list={[baseClasses, 'bg-neutral-950 text-neutral-50']} aria-current="page">
+              <span class:list={[baseClasses, 'bg-neutral-950 text-neutral-50 w-full']} aria-current="page">
                 {locale}
-              </a>
+              </span>
             ) : (
               <a href={getRelativeLocaleUrl(locale, '')} hreflang={locale} class:list={[baseClasses]}>
                 {locale}

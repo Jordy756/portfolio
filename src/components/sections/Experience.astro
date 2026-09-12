@@ -1,13 +1,17 @@
 ---
-import Section from '@components/chrome/Section.astro';
 import { getCurrentLocale, useContent } from '@i18n/utils';
 
 const locale = getCurrentLocale(Astro.currentLocale);
-const c = useContent(locale);
+const { experience } = useContent(locale);
 ---
 
-<Section title={c.experience.heading} class="max-h-screen">
-  {c.experience.paragraphs.map((paragraph) => (
-    <p>{paragraph}</p>
-  ))}
-</Section>
+<section class="relative flex flex-1 flex-col">
+  <header class="absolute top-0 left-0 border-b-2 border-r-2 bg-neutral-50 px-2 border-neutral-950">
+    <h2 class="text-xl font-semibold uppercase">{experience.heading}</h2>
+  </header>
+  <div class="flex flex-1 scrollbar-thin flex-col gap-6 overflow-y-auto px-8 xl:px-16 py-10 font-host-grotesk text-2xl max-h-80">
+    {experience.paragraphs.map((paragraph) => (
+      <p>{paragraph}</p>
+    ))}
+  </div>
+</section>
