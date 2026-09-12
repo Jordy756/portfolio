@@ -6,7 +6,7 @@ const locale = getCurrentLocale(Astro.currentLocale);
 const c = useContent(locale);
 ---
 
-<Section title={c.aboutMe.heading}>
+<Section title={c.aboutMe.heading} class="max-h-[calc(100dvh-84px)]">
   {c.aboutMe.paragraphs.map((paragraph) => (
     <p>{paragraph}</p>
   ))}
