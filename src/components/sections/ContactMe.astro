@@ -2,13 +2,15 @@
 import ArrowOutwardIcon from '@components/icons/ArrowOutwardIcon.astro';
 import { getCurrentLocale, useContent } from '@i18n/utils';
 
-const locale = getCurrentLocale(Astro.currentLocale);
-const c = useContent(locale);
+const currentLocale = getCurrentLocale(Astro.currentLocale);
+const { contactMe } = useContent(currentLocale);
 ---
 
-<section class="relative flex flex-3 flex-col justify-center px-16 py-10 border-b-2 border-neutral-950">
+<section class="relative flex flex-3 flex-col justify-center p-16 xl:py-10 max-xl:border-t-2 xl:border-b-2 border-neutral-950">
   <header>
-    <h2 class="font-bebas-neue 2xl:text-9xl text-5xl xl:text-8xl font-semibold uppercase">{c.contactMe.heading}</h2>
+    <h2 class="font-bebas-neue 2xl:text-9xl sm:text-9xl text-3xl xl:text-8xl font-semibold uppercase">
+      {contactMe.heading}
+    </h2>
   </header>
   <a
     href="mailto:jordycastro1756@gmail.com"
@@ -16,7 +18,7 @@ const c = useContent(locale);
     target="_blank"
     rel="noopener noreferrer"
   >
-    {c.contactMe.sendMessage}
+    {contactMe.sendMessage}
     <ArrowOutwardIcon width={12} height={12} class="size-3" />
   </a>
 </section>

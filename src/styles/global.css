@@ -70,21 +70,21 @@
 
 @utility layout-grid {
   display: grid;
-  /*grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr auto;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
     'header header header'
     'marquee main aside'
     'footer footer footer';
 
-  @variant xl {*/
-  grid-template-columns: 1fr 2.25fr;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas:
-    'header main main'
-    'aside main main'
-    'aside footer footer';
-  /*}*/
+  @variant xl {
+    grid-template-columns: 1fr 2.25fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      'header main main'
+      'aside main main'
+      'aside footer footer';
+  }
 }
 
 @utility w-page {

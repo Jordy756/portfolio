@@ -16,45 +16,63 @@ const locale = getCurrentLocale(Astro.currentLocale);
 const t = useTranslations(locale);
 
 const phrases = [t('marquee.phrase.1'), t('marquee.phrase.2'), t('marquee.phrase.3'), t('marquee.phrase.4')];
-const baseClasses = 'px-5 py-3.75 font-semibold text-center text-xl border-neutral-950 flex-1 flex';
+const baseClasses = 'size-full flex items-center px-5';
 ---
 
 <Layout title={t('home.title')} description={t('home.description')}>
-  <div class:list={['relative layout-grid min-h-screen w-page mx-auto xl:border-x-2 border-neutral-950 max-h-screen']}>
+  <div class:list={['relative layout-grid min-h-screen w-page mx-auto border-neutral-950 max-h-screen ']}>
     <Header class="grid-area-header" />
-    <aside class="flex flex-col grid-area-aside">
-      <AboutMe />
+
+    <aside data-aboutme-slot="xl" class="flex grid-area-aside max-xl:border-l-2">
+      <nav
+        aria-label={t('nav.aria.main')}
+        class="xl:hidden flex flex-1 writing-mode-sideways-lr uppercase font-semibold text-center text-xl border-neutral-950"
+      >
+        <a href="#projects" class:list={[baseClasses, 'w-9.5']}>
+          {t('nav.projects')}
+        </a>
+        <a href="#contact" class:list={[baseClasses, 'w-9.5 border-b-2']}>
+          {t('nav.contact')}
+        </a>
+      </nav>
     </aside>
-    <main class="flex border-b-2 border-l-2 grid-area-main border-neutral-950">
+    <Marquee phrases={phrases} direction="vertical" data-marquee class="grid-area-marquee xl:hidden" />
+    <main data-aboutme-slot="default" class="flex max-xl:flex-col grid-area-main max-xl:overflow-y-scroll">
       <div class="flex flex-1 flex-col">
         <DownloadCV />
         <HeroImage />
+        <AboutMe />
       </div>
-      <Marquee phrases={phrases} direction="vertical" />
-      <div class="flex flex-1 flex-col">
+      <Marquee phrases={phrases} direction="vertical" class="max-xl:hidden" />
+      <div class="flex flex-1 flex-col-reverse xl:flex-col">
         <ContactMe />
         <Experience />
       </div>
     </main>
     <Footer class="grid-area-footer" />
-    <!-- <Header class="grid-area-header" />
-    <aside class="flex grid-area-aside border-l-2 border-b-2">
-      <nav aria-label={t('nav.aria.main')} class="flex flex-1 writing-mode-sideways-lr uppercase">
-        <a href="#projects" class:list={[baseClasses]}>
-          {t('nav.projects')}
-        </a>
-        <a href="#contact" class:list={[baseClasses, 'border-b-2']}>
-          {t('nav.contact')}
-        </a>
-      </nav>
-    </aside>
-    <Marquee phrases={phrases} direction="vertical" class="grid-area-marquee" />
-    <main class="flex flex-col grid-area-main border-neutral-950 border-b-2 overflow-y-scroll">
-      <HeroImage />
-      <AboutMe />
-      <ContactMe />
-      <Experience />
-    </main>
-    <Footer class="grid-area-footer" /> -->
   </div>
 </Layout>
+
+<script>
+  const isXl = () => window.matchMedia('(min-width: 1280px)').matches;
+
+  const aboutme = document.querySelector('[data-aboutme]');
+  const aside = document.querySelector('[data-aboutme-slot="xl"]');
+  const heroImage = document.querySelector('[data-aboutme-slot="default"] figure');
+
+  const sync = () => {
+    if (!aboutme) return;
+
+    if (isXl()) {
+      if (aside && aboutme.parentElement !== aside) aside.appendChild(aboutme);
+      return;
+    }
+
+    if (heroImage && aboutme.previousElementSibling !== heroImage) {
+      heroImage.after(aboutme);
+    }
+  };
+
+  sync();
+  window.matchMedia('(min-width: 1280px)').addEventListener('change', sync);
+</script>

@@ -13,6 +13,7 @@ const { phrases, direction = 'horizontal', class: className } = Astro.props;
     className,
     direction === 'horizontal' ? 'h-fit w-full' : 'h-full w-fit writing-mode-vertical-rl',
     'flex gap-8 overflow-y-hidden bg-neutral-950 p-3 text-4xl font-semibold text-neutral-50 hover:[&>ul]:[animation-play-state:paused]',
+    'max-xl:w-10 max-xl:text-2xl max-xl:p-0 max-xl:items-center',
   ]}
 >
   {Array.from({ length: 3 }).map((_, index) => (

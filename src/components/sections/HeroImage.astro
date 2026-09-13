@@ -2,11 +2,11 @@
 import { Image } from 'astro:assets';
 import { useTranslations, getCurrentLocale } from '@i18n/utils';
 
-const locale = getCurrentLocale(Astro.currentLocale);
-const t = useTranslations(locale);
+const currentLocale = getCurrentLocale(Astro.currentLocale);
+const t = useTranslations(currentLocale);
 ---
 
-<figure class="relative flex flex-3 items-center justify-center border-t-2 border-neutral-950">
+<figure class="relative flex flex-3 items-center justify-center xl:border-t-2 max-xl:border-b-2 border-neutral-950 max-xl:min-h-[calc(100vh-78px)]">
   <Image
     src="/images/knight.webp"
     width={800}

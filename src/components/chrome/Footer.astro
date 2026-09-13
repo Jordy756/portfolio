@@ -11,8 +11,8 @@ interface Props {
 const { class: className } = Astro.props;
 const year = new Date().getFullYear();
 
-const locale = getCurrentLocale(Astro.currentLocale);
-const t = useTranslations(locale);
+const currentLocale = getCurrentLocale(Astro.currentLocale);
+const t = useTranslations(currentLocale);
 
 const links = [
   { label: t('nav.home'), href: '#root' },
@@ -32,9 +32,14 @@ const socialLinks = [
 ];
 ---
 
-<footer class:list={[className, 'flex items-center gap-4 border-l-2 px-8 py-4 text-sm uppercase border-neutral-950']}>
+<footer
+  class:list={[
+    className,
+    'flex items-center gap-4 xl:px-8 xl:py-4 px-4 py-2.25 text-sm uppercase border-t-2 border-neutral-950',
+  ]}
+>
   <p>© JC. {year}</p>
-  <nav aria-label={t('nav.aria.footer')}>
+  <nav aria-label={t('nav.aria.footer')} class="max-sm:hidden">
     <ul class="flex items-center gap-4">
       {links.map((link) => (
         <li>

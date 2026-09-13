@@ -11,7 +11,7 @@ const { class: className } = Astro.props;
 
 const currentLocale = getCurrentLocale(Astro.currentLocale);
 const t = useTranslations(currentLocale);
-const baseClasses = 'px-5 py-1.5 font-semibold text-center text-xl border-neutral-950';
+const baseClasses = 'xl:px-5 xl:py-1.5 size-full flex items-center justify-center';
 
 const mainNav = [
   { href: '#projects', label: t('nav.projects') },
@@ -19,15 +19,18 @@ const mainNav = [
 ];
 ---
 
-<header class:list={[className, 'flex uppercase border-b-2 border-neutral-950']}>
+<header class:list={[className, 'flex uppercase border-b-2 xl:border-r-2 border-neutral-950']}>
   <div class="flex-1 flex xl:justify-center px-4 py-2">
     <a href={`/${currentLocale}/#root`} aria-label={t('header.logo.action')} title={t('header.logo.action')}>
       <Logo class="h-full w-auto fill-neutral-950 object-contain" />
     </a>
   </div>
-  <nav aria-label={t('nav.aria.main')} class="hidden xl:flex flex-1 flex-col border-x-2">
+  <nav
+    aria-label={t('nav.aria.main')}
+    class="hidden xl:flex flex-1 flex-col border-x-2 font-semibold text-center text-xl border-neutral-950"
+  >
     {mainNav.map(({ href, label }) => (
-      <a href={href} class:list={[baseClasses, 'not-last:border-b-2']}>
+      <a href={href} class:list={[baseClasses, 'not-last:border-b-2 border-neutral-950']}>
         {label}
       </a>
     ))}
@@ -38,9 +41,9 @@ const mainNav = [
         const isCurrent = locale === currentLocale;
 
         return (
-          <li class="flex xl:not-last:border-b-2 max-xl:border-l-2 border-neutral-950 flex-1">
+          <li class="flex xl:not-last:border-b-2 max-xl:border-l-2 flex-1 max-xl:size-9.5 max-xl:last-of-type:w-10 font-semibold text-center text-xl border-neutral-950">
             {isCurrent ? (
-              <span class:list={[baseClasses, 'bg-neutral-950 text-neutral-50 w-full']} aria-current="page">
+              <span class:list={[baseClasses, 'text-neutral-50 bg-neutral-950']} aria-current="page">
                 {locale}
               </span>
             ) : (
