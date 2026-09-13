@@ -5,8 +5,8 @@ const currentLocale = getCurrentLocale(Astro.currentLocale);
 const { aboutMe } = useContent(currentLocale);
 ---
 
-<section data-aboutme class="relative flex flex-1 flex-col xl:border-r-2 border-neutral-950 max-xl:border-b-2">
-  <header class="absolute top-0 left-0 border-b-2 border-r-2 bg-neutral-50 px-2 border-neutral-950">
+<section data-aboutme class="relative flex flex-1 flex-col xl:border-r-2 max-xl:border-b-2">
+  <header class="absolute top-0 left-0 border-b-2 border-r-2 bg-neutral-50 px-2">
     <h2 class="text-xl font-semibold uppercase">{aboutMe.heading}</h2>
   </header>
   <div class="flex flex-1 scrollbar-thin flex-col gap-6 overflow-y-auto px-4 sm:px-8 xl:px-16 py-10 font-host-grotesk xl:text-2xl xl:max-h-[calc(100dvh-84px)]">

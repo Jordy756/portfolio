@@ -1,20 +1,31 @@
 ---
 import ArrowOutwardIcon from '@components/icons/ArrowOutwardIcon.astro';
 import { getCurrentLocale, useContent } from '@i18n/utils';
+import { Image } from 'astro:assets';
 
 const currentLocale = getCurrentLocale(Astro.currentLocale);
 const { contactMe } = useContent(currentLocale);
 ---
 
-<section class="relative flex flex-3 flex-col justify-center p-16 xl:py-10 max-xl:border-t-2 xl:border-b-2 border-neutral-950">
+<section
+  id="contact-me"
+  class="relative flex flex-3 flex-col xl:justify-center p-4 sm:p-8 xl:p-16 xl:py-10 max-xl:border-t-2 xl:border-b-2 max-xl:min-h-[calc(100dvh-78px)]"
+>
   <header>
-    <h2 class="font-bebas-neue 2xl:text-9xl sm:text-9xl text-3xl xl:text-8xl font-semibold uppercase">
+    <h2 class="font-bebas-neue 2xl:text-9xl sm:text-9xl text-6xl xl:text-8xl font-semibold uppercase">
       {contactMe.heading}
     </h2>
   </header>
+  <Image
+    src="/images/helmet.webp"
+    width={800}
+    height={800}
+    alt="asd"
+    class="absolute inset-0 size-full object-cover -z-1 xl:hidden"
+  />
   <a
     href="mailto:jordycastro1756@gmail.com"
-    class="absolute right-0 bottom-0 flex items-center justify-center gap-3 border-t-2 border-l-2 border-neutral-950 bg-neutral-50 px-5 py-1.5 text-center text-xl font-semibold uppercase"
+    class="absolute right-0 bottom-0 flex items-center justify-center gap-3 border-t-2 border-l-2 bg-neutral-50 px-5 py-1.5 text-center text-xl font-semibold uppercase"
     target="_blank"
     rel="noopener noreferrer"
   >

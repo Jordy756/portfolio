@@ -1,12 +1,13 @@
 ---
 import { Image } from 'astro:assets';
 import { useTranslations, getCurrentLocale } from '@i18n/utils';
+import DownloadIcon from '@components/icons/DownloadIcon.astro';
 
 const currentLocale = getCurrentLocale(Astro.currentLocale);
 const t = useTranslations(currentLocale);
 ---
 
-<figure class="relative flex flex-3 items-center justify-center xl:border-t-2 max-xl:border-b-2 border-neutral-950 max-xl:min-h-[calc(100vh-78px)]">
+<figure class="relative flex flex-3 items-end justify-end xl:border-t-2 max-xl:border-b-2 max-xl:min-h-[calc(100dvh-78px)]">
   <Image
     src="/images/knight.webp"
     width={800}
@@ -14,4 +15,13 @@ const t = useTranslations(currentLocale);
     alt={t('hero.image.alt')}
     class="absolute bottom-0 w-full max-h-full object-contain"
   />
+  <a
+    href={`/docs/Yordi_Castro_CV_${currentLocale.toLocaleUpperCase()}.pdf`}
+    class="flex xl:hidden items-center justify-center gap-3 border-t-2 border-l-2 px-5 py-1.5 text-xl font-semibold uppercase bg-neutral-50 z-1"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {t('hero.downloadCV')}
+    <DownloadIcon width={20} height={20} class="size-4" />
+  </a>
 </figure>

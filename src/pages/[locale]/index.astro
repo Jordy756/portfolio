@@ -20,24 +20,26 @@ const baseClasses = 'size-full flex items-center px-5';
 ---
 
 <Layout title={t('home.title')} description={t('home.description')}>
-  <div class:list={['relative layout-grid min-h-screen w-page mx-auto border-neutral-950 max-h-screen ']}>
+  <div class:list={['relative layout-grid min-h-dvh w-page mx-auto 2xl:border-x-2 max-h-dvh']}>
     <Header class="grid-area-header" />
-
     <aside data-aboutme-slot="xl" class="flex grid-area-aside max-xl:border-l-2">
       <nav
         aria-label={t('nav.aria.main')}
-        class="xl:hidden flex flex-1 writing-mode-sideways-lr uppercase font-semibold text-center text-xl border-neutral-950"
+        class="xl:hidden flex flex-1 writing-mode-sideways-lr uppercase font-semibold text-center text-xl"
       >
         <a href="#projects" class:list={[baseClasses, 'w-9.5']}>
           {t('nav.projects')}
         </a>
-        <a href="#contact" class:list={[baseClasses, 'w-9.5 border-b-2']}>
+        <a href="#contact-me" class:list={[baseClasses, 'w-9.5 border-b-2']}>
           {t('nav.contact')}
         </a>
       </nav>
     </aside>
     <Marquee phrases={phrases} direction="vertical" data-marquee class="grid-area-marquee xl:hidden" />
-    <main data-aboutme-slot="default" class="flex max-xl:flex-col grid-area-main max-xl:overflow-y-scroll">
+    <main
+      data-aboutme-slot="default"
+      class="flex max-xl:flex-col grid-area-main max-xl:overflow-y-auto max-xl:scrollbar-thin scroll-smooth"
+    >
       <div class="flex flex-1 flex-col">
         <DownloadCV />
         <HeroImage />
@@ -56,9 +58,9 @@ const baseClasses = 'size-full flex items-center px-5';
 <script>
   const isXl = () => window.matchMedia('(min-width: 1280px)').matches;
 
-  const aboutme = document.querySelector('[data-aboutme]');
-  const aside = document.querySelector('[data-aboutme-slot="xl"]');
-  const heroImage = document.querySelector('[data-aboutme-slot="default"] figure');
+  const aboutme = document.querySelector<HTMLDivElement>('[data-aboutme]');
+  const aside = document.querySelector<HTMLDivElement>('[data-aboutme-slot="xl"]');
+  const heroImage = document.querySelector<HTMLImageElement>('[data-aboutme-slot="default"] figure');
 
   const sync = () => {
     if (!aboutme) return;
