@@ -1,0 +1,15 @@
+---
+import { getCurrentLocale, useTranslations } from '@i18n/utils';
+import Layout from '@layouts/Layout.astro';
+
+export const getStaticPaths = async () => [{ params: { locale: 'en' } }, { params: { locale: 'es' } }];
+
+const currentLocale = getCurrentLocale(Astro.currentLocale);
+const t = useTranslations(currentLocale);
+---
+
+<Layout title={t('home.title')} description={t('home.description')}>
+  <div class="relative min-h-dvh w-page">
+    <h1>About Me</h1>
+  </div>
+</Layout>

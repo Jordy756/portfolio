@@ -1,11 +1,16 @@
 ---
 import { getCurrentLocale, useContent } from '@i18n/utils';
 
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
 const currentLocale = getCurrentLocale(Astro.currentLocale);
 const { aboutMe } = useContent(currentLocale);
 ---
 
-<section data-aboutme class="relative flex flex-1 flex-col xl:border-r-2 max-xl:border-b-2">
+<section data-aboutme class:list={[className, 'relative flex flex-1 flex-col xl:border-r-2 max-xl:border-b-2']}>
   <header class="absolute top-0 left-0 border-b-2 border-r-2 bg-neutral-50 px-2">
     <h2 class="text-xl font-semibold uppercase">{aboutMe.heading}</h2>
   </header>

@@ -4,8 +4,8 @@ import es from '@data/es.json';
 const navigation = {
   en: {
     'nav.home': 'Home',
-    'nav.about': 'About',
-    'nav.projects': 'Projects',
+    'nav.about': 'About Me',
+    'nav.work': 'Work',
     'nav.contact': 'Contact',
     'nav.aria.main': 'Main',
     'nav.aria.languages': 'Language selector',
@@ -15,7 +15,7 @@ const navigation = {
   es: {
     'nav.home': 'Inicio',
     'nav.about': 'Sobre mí',
-    'nav.projects': 'Proyectos',
+    'nav.work': 'Trabajos',
     'nav.contact': 'Contacto',
     'nav.aria.main': 'Principal',
     'nav.aria.languages': 'Selector de idioma',

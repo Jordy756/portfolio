@@ -16,9 +16,9 @@ const t = useTranslations(currentLocale);
 
 const links = [
   { label: t('nav.home'), href: '#root' },
-  { label: t('nav.about'), href: '#about' },
-  { label: t('nav.projects'), href: '#projects' },
-  { label: t('nav.contact'), href: '#contact' },
+  { label: t('nav.about'), href: `/${currentLocale}/about-me` },
+  { label: t('nav.work'), href: `/${currentLocale}/work` },
+  { label: t('nav.contact'), href: '#contact-me' },
 ];
 
 const socialLinks = [
