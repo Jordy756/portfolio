@@ -28,6 +28,7 @@
   --grid-area-main: main;
   --grid-area-aside: aside;
   --grid-area-footer: footer;
+  --grid-area-marquee: marquee;
 
   --animate-horizontal-marquee: horizontalMarqueeAnimation 10s linear infinite;
   --animate-vertical-marquee: verticalMarqueeAnimation 10s linear infinite;
@@ -69,32 +70,21 @@
 
 @utility layout-grid {
   display: grid;
+  /*grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'header header header'
+    'marquee main aside'
+    'footer footer footer';
+
+  @variant xl {*/
   grid-template-columns: 1fr 2.25fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
     'header main main'
     'aside main main'
     'aside footer footer';
-
-  /*grid-template-areas:
-    'sidebar'
-    'toc'
-    'main';*/
-
-  /*@variant lg {
-    grid-template-columns: 300px 1fr;
-    grid-template-rows: auto 1fr;
-    grid-template-areas:
-      'sidebar toc'
-      'sidebar main';
-  }
-
-  @variant xl {
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: 'sidebar main toc';
-    gap: 16px;
-  }*/
+  /*}*/
 }
 
 @utility w-page {

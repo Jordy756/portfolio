@@ -12,32 +12,33 @@ const { class: className } = Astro.props;
 const currentLocale = getCurrentLocale(Astro.currentLocale);
 const t = useTranslations(currentLocale);
 const baseClasses = 'px-5 py-1.5 font-semibold text-center text-xl border-neutral-950';
+
+const mainNav = [
+  { href: '#projects', label: t('nav.projects') },
+  { href: '#contact', label: t('nav.contact') },
+];
 ---
 
-<header class:list={[className, 'flex items-stretch justify-between uppercase border-b-2 border-neutral-950']}>
-  <a
-    href={`/${currentLocale}/#root`}
-    class="flex flex-[1.5] items-center justify-center px-4 py-2"
-    aria-label={t('header.logo.action')}
-    title={t('header.logo.action')}
-  >
-    <Logo class="h-16 w-full fill-neutral-950 object-contain" />
-  </a>
-  <nav aria-label={t('nav.aria.main')} class="flex flex-1 flex-col">
-    <a href="#projects" class:list={[baseClasses, 'border-2 border-t-0 ']}>
-      {t('nav.projects')}
+<header class:list={[className, 'flex uppercase border-b-2 border-neutral-950']}>
+  <div class="flex-1 flex xl:justify-center px-4 py-2">
+    <a href={`/${currentLocale}/#root`} aria-label={t('header.logo.action')} title={t('header.logo.action')}>
+      <Logo class="h-full w-auto fill-neutral-950 object-contain" />
     </a>
-    <a href="#contact" class:list={[baseClasses, 'border-2 border-y-0']}>
-      {t('nav.contact')}
-    </a>
+  </div>
+  <nav aria-label={t('nav.aria.main')} class="hidden xl:flex flex-1 flex-col border-x-2">
+    {mainNav.map(({ href, label }) => (
+      <a href={href} class:list={[baseClasses, 'not-last:border-b-2']}>
+        {label}
+      </a>
+    ))}
   </nav>
   <nav aria-label={t('nav.aria.languages')}>
-    <ul>
+    <ul class="flex xl:flex-col">
       {locales.map((locale) => {
         const isCurrent = locale === currentLocale;
 
         return (
-          <li class="flex not-last:border-b-2 border-neutral-950">
+          <li class="flex xl:not-last:border-b-2 max-xl:border-l-2 border-neutral-950 flex-1">
             {isCurrent ? (
               <span class:list={[baseClasses, 'bg-neutral-950 text-neutral-50 w-full']} aria-current="page">
                 {locale}
